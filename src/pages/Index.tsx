@@ -411,6 +411,156 @@ graph LR
           </Card>
         </Collapsible>
 
+        {/* Roadmap de Versões */}
+        <Collapsible>
+          <Card>
+            <CardHeader>
+              <CardTitle>Roadmap de Versões</CardTitle>
+              <CardDescription>
+                Evolução planejada do sistema, desde MVP até versões completas
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-8">
+                {/* MVP - Versão 1.0 */}
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h3 className="font-semibold text-xl mb-3">Versão 1.0 (MVP)</h3>
+                  <p className="text-gray-600 mb-4">Funcionalidades essenciais para validação do produto</p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium mb-2">Área do Usuário</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Cadastro e login básico</li>
+                        <li>Agendamento de consultas</li>
+                        <li>Videochamadas simples</li>
+                        <li>Tracking básico de saúde</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2">Área Profissional</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Perfil profissional</li>
+                        <li>Agenda básica</li>
+                        <li>Atendimento online</li>
+                        <li>Registro de consultas</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Versão 2.0 */}
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h3 className="font-semibold text-xl mb-3">Versão 2.0</h3>
+                  <p className="text-gray-600 mb-4">Expansão de funcionalidades e melhorias na experiência</p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium mb-2">Novas Funcionalidades</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Comunidade e grupos de apoio</li>
+                        <li>Chat assíncrono</li>
+                        <li>Marketplace básico</li>
+                        <li>Blog e conteúdo educativo</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2">Melhorias</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Dashboard personalizado</li>
+                        <li>Tracking avançado</li>
+                        <li>Notificações inteligentes</li>
+                        <li>Prescrições digitais</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Versão 3.0 */}
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h3 className="font-semibold text-xl mb-3">Versão 3.0</h3>
+                  <p className="text-gray-600 mb-4">Integração avançada e recursos premium</p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium mb-2">Recursos Avançados</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>IA para recomendações</li>
+                        <li>Integração com wearables</li>
+                        <li>Marketplace completo</li>
+                        <li>Analytics avançado</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2">Área Administrativa</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Gestão completa de usuários</li>
+                        <li>Moderação de conteúdo</li>
+                        <li>Gestão de marketplace</li>
+                        <li>Relatórios avançados</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Versão 4.0 */}
+                <div className="border-l-4 border-orange-500 pl-4">
+                  <h3 className="font-semibold text-xl mb-3">Versão 4.0</h3>
+                  <p className="text-gray-600 mb-4">Expansão e recursos empresariais</p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium mb-2">Recursos Enterprise</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>White label para clínicas</li>
+                        <li>API pública</li>
+                        <li>Integração com planos de saúde</li>
+                        <li>Suporte multi-idioma</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2">Expansões</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Marketplace internacional</li>
+                        <li>Programa de afiliados</li>
+                        <li>Apps móveis nativos</li>
+                        <li>Blockchain para prontuários</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Diagrama de Evolução */}
+                <div className="mt-8">
+                  <h3 className="font-semibold text-xl mb-4">Evolução das Versões</h3>
+                  <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
+                    <pre className="mermaid text-sm">
+                      {`
+gantt
+    title Roadmap de Desenvolvimento
+    dateFormat YYYY-MM
+    axisFormat %Y-%m
+    
+    section MVP (v1.0)
+    Funcionalidades Básicas      :2024-01, 4m
+    Validação com Usuários       :2024-03, 2m
+    
+    section Versão 2.0
+    Comunidade & Marketplace     :2024-05, 3m
+    Melhorias de UX             :2024-07, 2m
+    
+    section Versão 3.0
+    IA & Analytics              :2024-09, 4m
+    Integrações Avançadas       :2024-11, 3m
+    
+    section Versão 4.0
+    Recursos Enterprise         :2025-02, 4m
+    Expansão Internacional      :2025-05, 3m
+                      `}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Collapsible>
+
         {/* Fluxos e Narrativas */}
         <Collapsible>
           <Card>
@@ -537,7 +687,7 @@ graph TD
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Integrações Principais</h3>
                   <p className="text-gray-600">
-                    Sistema altamente integrado onde cada ação impacta múltiplas áreas. Blog alimenta recomendações,
+                    Sistema altamente integrado onde cada aç��o impacta múltiplas áreas. Blog alimenta recomendações,
                     tracking influencia produtos sugeridos, e comunidade impacta catálogo do marketplace.
                   </p>
                 </div>
