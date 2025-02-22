@@ -192,24 +192,182 @@ flowchart LR
             </CollapsibleTrigger>
             <CollapsibleContent>
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-8">
+                  {/* Área do Usuário */}
                   <div>
-                    <h3 className="font-semibold mb-2">Consultas Online</h3>
-                    <ul className="list-disc pl-5 text-gray-600">
-                      <li>Videochamadas</li>
-                      <li>Chat em tempo real</li>
-                      <li>Compartilhamento de documentos</li>
-                      <li>Prescrições digitais</li>
-                    </ul>
+                    <h3 className="font-semibold text-xl mb-4 text-primary">Área do Usuário (/dashboard)</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Consultas Online (/consultas)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Videochamadas em tempo real</li>
+                            <li>Chat integrado com profissionais</li>
+                            <li>Compartilhamento de documentos</li>
+                            <li>Histórico de atendimentos</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Tracking de Saúde (/tracking)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Medidas físicas e sinais vitais</li>
+                            <li>Diário de humor e bem-estar</li>
+                            <li>Registro de alimentação</li>
+                            <li>Log de exercícios e sono</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Comunidade (/comunidade)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Grupos de apoio temáticos</li>
+                            <li>Desafios e metas coletivas</li>
+                            <li>Fórum de discussão</li>
+                            <li>Eventos online</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Marketplace (/loja)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Produtos recomendados</li>
+                            <li>Suplementos e vitaminas</li>
+                            <li>Equipamentos fitness</li>
+                            <li>Produtos naturais</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  {/* Área Profissional */}
                   <div>
-                    <h3 className="font-semibold mb-2">Tracking de Saúde</h3>
-                    <ul className="list-disc pl-5 text-gray-600">
-                      <li>Medidas físicas</li>
-                      <li>Humor e bem-estar</li>
-                      <li>Alimentação</li>
-                      <li>Exercícios e sono</li>
-                    </ul>
+                    <h3 className="font-semibold text-xl mb-4 text-primary">Área Profissional (/pro)</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Gestão de Pacientes (/pro/pacientes)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Prontuário digital</li>
+                            <li>Histórico de atendimentos</li>
+                            <li>Evolução e métricas</li>
+                            <li>Prescrições digitais</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Agenda (/pro/agenda)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Configuração de horários</li>
+                            <li>Gestão de consultas</li>
+                            <li>Notificações automáticas</li>
+                            <li>Reagendamentos</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Financeiro (/pro/financeiro)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Controle de pagamentos</li>
+                            <li>Relatórios de faturamento</li>
+                            <li>Split de pagamentos</li>
+                            <li>Notas fiscais</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Analytics (/pro/analytics)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Métricas de atendimento</li>
+                            <li>Taxa de conversão</li>
+                            <li>Satisfação dos pacientes</li>
+                            <li>Insights e tendências</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Área Administrativa */}
+                  <div>
+                    <h3 className="font-semibold text-xl mb-4 text-primary">Área Administrativa (/admin)</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Gestão de Usuários (/admin/users)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Controle de acessos</li>
+                            <li>Verificação profissional</li>
+                            <li>Moderação de conteúdo</li>
+                            <li>Suporte ao usuário</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Conteúdo (/admin/content)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Gestão do blog</li>
+                            <li>Newsletter</li>
+                            <li>Materiais educativos</li>
+                            <li>FAQ e ajuda</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Marketplace Admin (/admin/market)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Aprovação de vendedores</li>
+                            <li>Gestão de produtos</li>
+                            <li>Controle de qualidade</li>
+                            <li>Análise de vendas</li>
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-medium text-lg mb-2">Sistema (/admin/system)</h4>
+                          <ul className="list-disc pl-5 text-gray-600 space-y-2">
+                            <li>Configurações gerais</li>
+                            <li>Logs do sistema</li>
+                            <li>Backup e segurança</li>
+                            <li>Integrações</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Conexões entre Funcionalidades */}
+                  <div>
+                    <h3 className="font-semibold text-xl mb-4 text-primary">Conexões entre Funcionalidades</h3>
+                    <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
+                      <pre className="mermaid text-sm">
+                        {`
+graph LR
+    %% Área do Usuário
+    Dashboard["/dashboard"] --> Consultas["/consultas"]
+    Dashboard --> Tracking["/tracking"]
+    Dashboard --> Comunidade["/comunidade"]
+    Dashboard --> Loja["/loja"]
+    
+    %% Área Profissional
+    Pro["/pro"] --> Pacientes["/pro/pacientes"]
+    Pro --> Agenda["/pro/agenda"]
+    Pro --> Financeiro["/pro/financeiro"]
+    Pro --> Analytics["/pro/analytics"]
+    
+    %% Área Admin
+    Admin["/admin"] --> Users["/admin/users"]
+    Admin --> Content["/admin/content"]
+    Admin --> Market["/admin/market"]
+    Admin --> System["/admin/system"]
+    
+    %% Conexões Cruzadas
+    Consultas --> |"Gera"| Tracking
+    Tracking --> |"Influencia"| Loja
+    Pacientes --> |"Visualiza"| Tracking
+    Content --> |"Alimenta"| Dashboard
+    Market --> |"Gerencia"| Loja
+                        `}
+                      </pre>
+                    </div>
                   </div>
                 </div>
               </CardContent>
