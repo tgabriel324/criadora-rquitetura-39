@@ -1,10 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
-import { Layers, Database, Server, Cog, List, Check, X, Folder, File } from "lucide-react";
+import { Layers, Database, Server, Cog, List, Check, X, Folder, File, MessageCircleQuestion, AlertTriangle, Lightbulb, HelpCircle, InfoIcon } from "lucide-react";
 import { useState } from "react";
 import Mermaid from "@/components/ui/mermaid";
-import { MessageCircleQuestion, AlertTriangle, Lightbulb, Help } from "lucide-react";
 
 const Modelo1 = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
@@ -932,7 +931,7 @@ gantt
             <div className="space-y-4">
               <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <Info className="h-4 w-4" />
+                  <InfoIcon className="h-4 w-4" />
                   Pontos de Atenção
                 </h3>
                 <div className="space-y-2">
@@ -960,7 +959,7 @@ gantt
 
               <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <Help className="h-4 w-4" />
+                  <HelpCircle className="h-4 w-4" />
                   Pontos a Esclarecer
                 </h3>
                 <div className="space-y-2">
