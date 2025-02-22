@@ -252,6 +252,141 @@ flowchart LR
             </CollapsibleContent>
           </Card>
         </Collapsible>
+
+        {/* Fluxos e Narrativas */}
+        <Collapsible>
+          <Card>
+            <CardHeader>
+              <CardTitle>Fluxos e Narrativas do Sistema</CardTitle>
+              <CardDescription>
+                Detalhamento dos principais fluxos e jornadas de usuários na plataforma
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
+                <pre className="mermaid text-sm">
+                  {`
+graph TD
+    %% Fluxos de Entrada
+    subgraph Entrada["Fluxos de Entrada"]
+        Marketing["Marketing Digital"] --> Landing
+        Indicacao["Indicação Profissional"] --> Landing
+        Landing --> Cadastro
+        Cadastro --> |"Usuário"| AreaUser["Área do Usuário"]
+        Cadastro --> |"Profissional"| VerificacaoPro["Verificação Profissional"]
+        VerificacaoPro --> AreaPro["Área Profissional"]
+        Cadastro --> |"Vendedor"| VerificacaoVend["Verificação Vendedor"]
+        VerificacaoVend --> AreaMarket["Área Marketplace"]
+    end
+
+    %% Jornada Usuário - Autocuidado
+    subgraph Autocuidado["Jornada de Autocuidado"]
+        TrackingDiario["Tracking Diário"] --> DashboardUser["Dashboard"]
+        DashboardUser --> Recomendacoes["Recomendações"]
+        Recomendacoes --> Produtos["Produtos Sugeridos"]
+        
+        Comunidade --> |"Participação"| Grupos["Grupos de Apoio"]
+        Grupos --> Desafios["Desafios"]
+        Desafios --> TrackingDiario
+        
+        Blog --> |"Leitura"| ContPersonalizado["Conteúdo Personalizado"]
+        ContPersonalizado --> Recomendacoes
+    end
+
+    %% Jornada de Atendimento
+    subgraph Atendimento["Jornada de Atendimento"]
+        BuscaPro["Busca Profissional"] --> Agendamento
+        Agendamento --> Consulta
+        Consulta --> |"Gera"| Prescricao["Prescrição"]
+        Prescricao --> |"Direciona"| Marketplace
+        Consulta --> |"Gera"| PlanoAcomp["Plano Acompanhamento"]
+        PlanoAcomp --> TrackingDiario
+        TrackingDiario --> |"Análise"| NovaConsulta["Nova Consulta"]
+    end
+
+    %% Fluxos Profissionais
+    subgraph Profissional["Fluxos do Profissional"]
+        OnboardingPro["Onboarding"] --> ConfigPerfil["Configuração Perfil"]
+        ConfigPerfil --> ConfigAgenda["Configuração Agenda"]
+        ConfigAgenda --> AtendConsultas["Atendimento Consultas"]
+        AtendConsultas --> GestaoFinanceira["Gestão Financeira"]
+        AtendConsultas --> GestaoPacientes["Gestão Pacientes"]
+        GestaoPacientes --> AnalyticsPro["Analytics Pro"]
+    end
+
+    %% Marketplace
+    subgraph MarketFlow["Fluxos Marketplace"]
+        CadastroVendedor["Cadastro Vendedor"] --> ConfigLoja["Configuração Loja"]
+        ConfigLoja --> CatalogoProdutos["Catálogo Produtos"]
+        Prescricao --> |"Recomenda"| CatalogoProdutos
+        TrackingDiario --> |"Influencia"| RecomendacaoProdutos["Recomendação Produtos"]
+        RecomendacaoProdutos --> Compra["Compra"]
+        Compra --> Entrega
+        Entrega --> Avaliacao["Avaliação"]
+        Avaliacao --> |"Feedback"| CatalogoProdutos
+    end
+
+    %% Integrações Principais
+    Blog --> |"Alimenta"| Recomendacoes
+    TrackingDiario --> |"Influencia"| RecomendacaoProdutos
+    Comunidade --> |"Impacta"| CatalogoProdutos
+    GestaoPacientes --> |"Integra"| Marketplace
+                  `}
+                </pre>
+              </div>
+
+              <div className="mt-6 space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Fluxos de Entrada</h3>
+                  <p className="text-gray-600">
+                    Múltiplos pontos de entrada garantem alcance diversificado. Marketing digital e indicações profissionais
+                    direcionam para landing pages específicas, com processos de verificação diferenciados por tipo de usuário.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Jornada de Autocuidado</h3>
+                  <p className="text-gray-600">
+                    Ciclo contínuo de acompanhamento onde tracking diário alimenta dashboard personalizado, gerando
+                    recomendações contextualizadas. Integração com comunidade promove engajamento através de desafios e grupos de apoio.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Jornada de Atendimento</h3>
+                  <p className="text-gray-600">
+                    Fluxo completo desde busca do profissional até follow-up pós-consulta. Prescrições integradas com
+                    marketplace e planos de acompanhamento conectados ao tracking diário.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Fluxos do Profissional</h3>
+                  <p className="text-gray-600">
+                    Processo estruturado desde onboarding até gestão completa da prática. Integração entre atendimentos,
+                    gestão financeira e analytics para otimização contínua.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Fluxos Marketplace</h3>
+                  <p className="text-gray-600">
+                    Ecossistema que conecta vendedores, produtos, prescrições e avaliações. Sistema de recomendação
+                    influenciado por tracking e comportamento do usuário.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Integrações Principais</h3>
+                  <p className="text-gray-600">
+                    Sistema altamente integrado onde cada ação impacta múltiplas áreas. Blog alimenta recomendações,
+                    tracking influencia produtos sugeridos, e comunidade impacta catálogo do marketplace.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Collapsible>
       </div>
     </div>
   );
