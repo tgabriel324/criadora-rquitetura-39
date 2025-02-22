@@ -50,36 +50,113 @@ const Index = () => {
         {/* Diagrama Organizacional */}
         <Card>
           <CardHeader>
-            <CardTitle>Estrutura Organizacional</CardTitle>
+            <CardTitle>Estrutura Organizacional Detalhada</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
               <pre className="mermaid text-sm">
                 {`
 graph TD
-    A[SaúdeJá Platform] --> B[Usuários]
-    A --> C[Profissionais]
-    A --> D[Marketplace]
-    A --> E[Administração]
+    A[SaúdeJá Platform] --> B[Área Pública]
+    A --> C[Área do Usuário]
+    A --> D[Área Profissional]
+    A --> E[Área Administrativa]
+    A --> F[Marketplace]
 
-    B --> B1[Plano Gratuito]
-    B --> B2[Plano Essencial]
-    B --> B3[Plano Plus]
-    B --> B4[Plano Premium]
+    %% Área Pública
+    B --> B1[Landing Page]
+    B --> B2[Blog]
+    B --> B3[Cadastro/Login]
+    B --> B4[Preços/Planos]
+    
+    B1 --> B1.1[Hero Section]
+    B1 --> B1.2[Features]
+    B1 --> B1.3[Depoimentos]
+    
+    B2 --> B2.1[Artigos]
+    B2 --> B2.2[Dicas]
+    B2 --> B2.3[Notícias]
 
-    C --> C1[Médicos]
-    C --> C2[Nutricionistas]
-    C --> C3[Psicólogos]
-    C --> C4[Personal Trainers]
+    %% Área do Usuário
+    C --> C1[Dashboard]
+    C --> C2[Consultas]
+    C --> C3[Tracking]
+    C --> C4[Comunidade]
+    
+    C1 --> C1.1[Métricas]
+    C1 --> C1.2[Progresso]
+    C1 --> C1.3[Lembretes]
+    
+    C2 --> C2.1[Agendamento]
+    C2 --> C2.2[Videochamada]
+    C2 --> C2.3[Chat]
+    C2 --> C2.4[Histórico]
+    
+    C3 --> C3.1[Medidas Físicas]
+    C3 --> C3.2[Humor/Bem-estar]
+    C3 --> C3.3[Alimentação]
+    C3 --> C3.4[Exercícios]
+    C3 --> C3.5[Sono]
 
-    D --> D1[Produtos Naturais]
-    D --> D2[Suplementos]
-    D --> D3[Equipamentos]
+    C4 --> C4.1[Grupos]
+    C4 --> C4.2[Fórums]
+    C4 --> C4.3[Lives]
+    C4 --> C4.4[Desafios]
 
-    E --> E1[Gestão de Usuários]
+    %% Área Profissional
+    D --> D1[Dashboard Pro]
+    D --> D2[Pacientes]
+    D --> D3[Agenda]
+    D --> D4[Financeiro]
+    
+    D1 --> D1.1[Métricas Pro]
+    D1 --> D1.2[Notificações]
+    D1 --> D1.3[Tasks]
+    
+    D2 --> D2.1[Lista]
+    D2 --> D2.2[Prontuários]
+    D2 --> D2.3[Prescrições]
+    
+    D3 --> D3.1[Horários]
+    D3 --> D3.2[Consultas]
+    D3 --> D3.3[Bloqueios]
+
+    %% Área Administrativa
+    E --> E1[Gestão Usuários]
     E --> E2[Financeiro]
-    E --> E3[Suporte]
-    E --> E4[Conteúdo]
+    E --> E3[Conteúdo]
+    E --> E4[Suporte]
+    
+    E1 --> E1.1[Cadastros]
+    E1 --> E1.2[Permissões]
+    E1 --> E1.3[Bloqueios]
+    
+    E2 --> E2.1[Pagamentos]
+    E2 --> E2.2[Assinaturas]
+    E2 --> E2.3[Comissões]
+    
+    E3 --> E3.1[Blog]
+    E3 --> E3.2[Emails]
+    E3 --> E3.3[Notificações]
+
+    %% Marketplace
+    F --> F1[Produtos]
+    F --> F2[Vendedores]
+    F --> F3[Pedidos]
+    F --> F4[Analytics]
+    
+    F1 --> F1.1[Catálogo]
+    F1 --> F1.2[Categorias]
+    F1 --> F1.3[Promoções]
+    
+    F2 --> F2.1[Cadastro]
+    F2 --> F2.2[Dashboard]
+    F2 --> F2.3[Financeiro]
+    
+    F3 --> F3.1[Carrinho]
+    F3 --> F3.2[Checkout]
+    F3 --> F3.3[Entrega]
+    F3 --> F3.4[Status]
                 `}
               </pre>
             </div>
