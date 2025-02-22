@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
@@ -28,6 +29,19 @@ const Index = () => {
     }));
   };
 
+  const projects = [
+    {
+      title: "SaúdeJá",
+      description: "Plataforma Integrada de Bem-estar",
+      route: "/"
+    },
+    {
+      title: "Projeto Bruno",
+      description: "Dashboard e Funcionalidades",
+      route: "/bruno"
+    }
+  ];
+
   const models = [
     {
       title: "Modelo 1",
@@ -38,29 +52,54 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Barra de navegação com dropdown */}
+      {/* Barra de navegação com dropdowns */}
       <nav className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
-        <div className="max-w-5xl mx-auto px-4 py-2 flex items-center">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="flex items-center gap-2">
-                Modelos
-                <ChevronDown className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              {models.map((model) => (
-                <DropdownMenuItem
-                  key={model.route}
-                  onClick={() => navigate(model.route)}
-                  className="flex flex-col items-start"
-                >
-                  <span className="font-medium">{model.title}</span>
-                  <span className="text-sm text-gray-500">{model.description}</span>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+        <div className="max-w-5xl mx-auto px-4 py-2 flex items-center justify-between">
+          <div> {/* Menu Projetos à esquerda */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="flex items-center gap-2">
+                  Projetos
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                {projects.map((project) => (
+                  <DropdownMenuItem
+                    key={project.route}
+                    onClick={() => navigate(project.route)}
+                    className="flex flex-col items-start"
+                  >
+                    <span className="font-medium">{project.title}</span>
+                    <span className="text-sm text-gray-500">{project.description}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+          
+          <div> {/* Menu Modelos à direita */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="flex items-center gap-2">
+                  Modelos
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                {models.map((model) => (
+                  <DropdownMenuItem
+                    key={model.route}
+                    onClick={() => navigate(model.route)}
+                    className="flex flex-col items-start"
+                  >
+                    <span className="font-medium">{model.title}</span>
+                    <span className="text-sm text-gray-500">{model.description}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </nav>
 
@@ -761,3 +800,4 @@ graph TD
 };
 
 export default Index;
+
