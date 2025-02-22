@@ -2,9 +2,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
 import Mermaid from "@/components/ui/mermaid";
-import Navbar from "@/components/ui/navbar";
+import { useNavigate } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
     overview: true,
     users: false,
@@ -19,9 +28,43 @@ const Index = () => {
     }));
   };
 
+  const models = [
+    {
+      title: "Modelo 1",
+      description: "Documentação Completa de Projeto",
+      route: "/"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      {/* Barra de navegação com dropdown */}
+      <nav className="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+        <div className="max-w-5xl mx-auto px-4 py-2 flex items-center">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="flex items-center gap-2">
+                Modelos
+                <ChevronDown className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56">
+              {models.map((model) => (
+                <DropdownMenuItem
+                  key={model.route}
+                  onClick={() => navigate(model.route)}
+                  className="flex flex-col items-start"
+                >
+                  <span className="font-medium">{model.title}</span>
+                  <span className="text-sm text-gray-500">{model.description}</span>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      </nav>
+
+      {/* Conteúdo principal com padding-top para compensar a navbar fixa */}
       <div className="pt-16 p-6">
         {/* Header */}
         <div className="max-w-5xl mx-auto mb-8 text-center">
@@ -30,7 +73,6 @@ const Index = () => {
         </div>
 
         {/* Main Content */}
-        {/* Conteúdo principal com padding-top para compensar a navbar fixa */}
         <div className="max-w-5xl mx-auto grid gap-6">
           <Card>
             <CardHeader>
