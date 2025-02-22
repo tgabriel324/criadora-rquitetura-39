@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Layers, Database, Server, Cog, List, Check, X, Folder, File } from "lucide-react";
 import { useState } from "react";
 import Mermaid from "@/components/ui/mermaid";
+import { MessageCircleQuestion, AlertTriangle, Lightbulb, Help } from "lucide-react";
 
 const Modelo1 = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
@@ -478,7 +479,7 @@ graph TD
                   </div>
                 </div>
 
-                {/* Estratégia de Monetização */}
+                {/* Estrat��gia de Monetização */}
                 <div>
                   <h3 className="text-lg font-semibold mb-4">5.3 Estratégia de Monetização</h3>
                   <div className="space-y-4">
@@ -776,6 +777,204 @@ gantt
             </pre>
           </CardContent>
         </Card>
+
+        {/* Seção de Perguntas Essenciais */}
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <MessageCircleQuestion className="h-5 w-5" />
+              <CardTitle>Perguntas Essenciais do Projeto</CardTitle>
+            </div>
+            <CardDescription>
+              Questões fundamentais para o completo entendimento e documentação do projeto
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {/* Visão Geral */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3">1. Visão Geral do Projeto</h3>
+                <div className="space-y-2 pl-4">
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Qual o problema específico que o projeto resolve?"
+                    />
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Quem são os stakeholders principais?"
+                    />
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Qual é o objetivo final do projeto?"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Público-Alvo */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3">2. Público-Alvo</h3>
+                <div className="space-y-2 pl-4">
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Quem são os usuários principais?"
+                    />
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Quais são suas dores e necessidades?"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Modelo de Negócio */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3">3. Modelo de Negócio</h3>
+                <div className="space-y-2 pl-4">
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Como o projeto vai gerar receita?"
+                    />
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Qual é o modelo de precificação?"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Requisitos Técnicos */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3">4. Requisitos Técnicos</h3>
+                <div className="space-y-2 pl-4">
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Quais tecnologias devem ser utilizadas?"
+                    />
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Qual é a expectativa de escala?"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* UX e Analytics */}
+              <div>
+                <h3 className="text-lg font-semibold mb-3">5. Experiência e Análise</h3>
+                <div className="space-y-2 pl-4">
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Quais são os principais fluxos de usuário?"
+                    />
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="min-w-4 mt-1">•</div>
+                    <input 
+                      type="text" 
+                      className="w-full p-2 border rounded-md" 
+                      defaultValue="Quais métricas precisam ser monitoradas?"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Seção de Observações Importantes */}
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5 text-yellow-500" />
+              <CardTitle>Observações Importantes</CardTitle>
+            </div>
+            <CardDescription>
+              Pontos críticos e considerações especiais para o projeto
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <Info className="h-4 w-4" />
+                  Pontos de Atenção
+                </h3>
+                <div className="space-y-2">
+                  <textarea 
+                    className="w-full p-2 border rounded-md" 
+                    rows={3}
+                    placeholder="Decisões pendentes, riscos identificados..."
+                  />
+                </div>
+              </div>
+
+              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <Lightbulb className="h-4 w-4" />
+                  Sugestões de Melhoria
+                </h3>
+                <div className="space-y-2">
+                  <textarea 
+                    className="w-full p-2 border rounded-md" 
+                    rows={3}
+                    placeholder="Ideias para evolução do projeto..."
+                  />
+                </div>
+              </div>
+
+              <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <Help className="h-4 w-4" />
+                  Pontos a Esclarecer
+                </h3>
+                <div className="space-y-2">
+                  <textarea 
+                    className="w-full p-2 border rounded-md" 
+                    rows={3}
+                    placeholder="Questões que precisam ser esclarecidas..."
+                  />
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
       </div>
     </div>
   );
