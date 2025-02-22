@@ -2,8 +2,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
 import Mermaid from "@/components/ui/mermaid";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
     overview: true,
     users: false,
@@ -18,8 +20,40 @@ const Index = () => {
     }));
   };
 
+  const projects = [
+    {
+      title: "SaúdeJá",
+      description: "Plataforma Integrada de Bem-estar",
+      route: "/"
+    },
+    {
+      title: "Projeto Bruno",
+      description: "Dashboard e Funcionalidades",
+      route: "/bruno"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 p-6">
+      {/* Seletor de Projetos */}
+      <div className="max-w-5xl mx-auto mb-12">
+        <h2 className="text-2xl font-bold text-center mb-6">Selecione um Projeto</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <Card 
+              key={project.route}
+              className="cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() => navigate(project.route)}
+            >
+              <CardHeader>
+                <CardTitle>{project.title}</CardTitle>
+                <CardDescription>{project.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
+      </div>
+
       {/* Header */}
       <div className="max-w-5xl mx-auto mb-8 text-center">
         <h1 className="text-4xl font-bold text-primary mb-4">SaúdeJá</h1>
@@ -28,7 +62,6 @@ const Index = () => {
 
       {/* Main Content */}
       <div className="max-w-5xl mx-auto grid gap-6">
-        {/* Visão Geral */}
         <Card>
           <CardHeader>
             <CardTitle>Visão Geral do Projeto</CardTitle>
@@ -125,10 +158,17 @@ flowchart LR
                 `}
               />
             </div>
+            <div className="mt-4 text-gray-600">
+              <p className="text-sm">
+                Este diagrama ilustra a estrutura completa da plataforma SaúdeJá, demonstrando como as diferentes áreas se 
+                interconectam. A plataforma é dividida em cinco áreas principais: Pública, Usuário, Profissional, 
+                Administrativa e Marketplace. Cada área possui seus próprios módulos e funcionalidades específicas, com 
+                fluxos de dados e interações claramente definidos entre eles.
+              </p>
+            </div>
           </CardContent>
         </Card>
 
-        {/* Tipos de Usuários */}
         <Collapsible open={openSections.users} onOpenChange={() => toggleSection("users")}>
           <Card>
             <CollapsibleTrigger className="w-full">
@@ -363,6 +403,14 @@ graph LR
                       `}
                       />
                     </div>
+                    <div className="mt-4 text-gray-600">
+                      <p className="text-sm">
+                        Este diagrama mostra as rotas e conexões entre as diferentes funcionalidades do sistema. 
+                        As setas indicam as relações e dependências entre os módulos, demonstrando como os dados 
+                        fluem através da aplicação. Por exemplo, as consultas geram dados de tracking, que por sua 
+                        vez influenciam as recomendações da loja.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -550,6 +598,14 @@ gantt
                       `}
                     />
                   </div>
+                  <div className="mt-4 text-gray-600">
+                    <p className="text-sm">
+                      Este gráfico Gantt apresenta o planejamento temporal do desenvolvimento da plataforma, 
+                      desde o MVP até a versão enterprise. Cada fase tem objetivos específicos e durações 
+                      estimadas, com foco inicial nas funcionalidades básicas e expansão gradual para recursos 
+                      mais avançados e internacionalização.
+                    </p>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -682,7 +738,7 @@ graph TD
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Integrações Principais</h3>
                   <p className="text-gray-600">
-                    Sistema altamente integrado onde cada aç��o impacta múltiplas áreas. Blog alimenta recomendações,
+                    Sistema altamente integrado onde cada ação impacta múltiplas áreas. Blog alimenta recomendações,
                     tracking influencia produtos sugeridos, e comunidade impacta catálogo do marketplace.
                   </p>
                 </div>
