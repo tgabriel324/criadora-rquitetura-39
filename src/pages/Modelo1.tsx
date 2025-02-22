@@ -11,10 +11,10 @@ const Modelo1 = () => {
     requirements: false,
     architecture: false,
     database: false,
-    frontend: false,
-    backend: false,
-    infrastructure: false,
-    planning: false,
+    userProfiles: false,
+    flows: false,
+    monetization: false,
+    roadmap: false,
     risks: false
   });
 
@@ -190,6 +190,239 @@ erDiagram
     ITEM }|--|| PRODUTO : referencia
                     `}
                   </pre>
+                </div>
+              </CardContent>
+            </CollapsibleContent>
+          </Card>
+        </Collapsible>
+
+        {/* Nova Seção: Perfis de Usuário e Áreas do Sistema */}
+        <Collapsible open={openSections.userProfiles}>
+          <Card>
+            <CardHeader className="cursor-pointer" onClick={() => toggleSection("userProfiles")}>
+              <div className="flex items-center gap-2">
+                <Layers className="h-5 w-5" />
+                <CardTitle>Perfis de Usuário e Áreas do Sistema</CardTitle>
+              </div>
+              <CardDescription>Detalhamento por tipo de usuário e suas respectivas áreas</CardDescription>
+            </CardHeader>
+            <CollapsibleContent>
+              <CardContent>
+                <div className="space-y-8">
+                  {/* Mapeamento de Perfis */}
+                  <div>
+                    <h3 className="text-lg font-semibold mb-4">Perfis de Usuário</h3>
+                    <div className="grid md:grid-cols-3 gap-6">
+                      {/* Perfil A */}
+                      <Card className="p-4">
+                        <h4 className="font-medium mb-2">Perfil A</h4>
+                        <div className="space-y-2">
+                          <p className="text-sm text-gray-600">Características principais:</p>
+                          <textarea 
+                            className="w-full p-2 border rounded-md text-sm" 
+                            rows={3}
+                            placeholder="Descreva as características do Perfil A..."
+                          />
+                          <p className="text-sm text-gray-600">Necessidades principais:</p>
+                          <textarea 
+                            className="w-full p-2 border rounded-md text-sm" 
+                            rows={3}
+                            placeholder="Liste as principais necessidades..."
+                          />
+                        </div>
+                      </Card>
+
+                      {/* Perfil B */}
+                      <Card className="p-4">
+                        <h4 className="font-medium mb-2">Perfil B</h4>
+                        <div className="space-y-2">
+                          <p className="text-sm text-gray-600">Características principais:</p>
+                          <textarea 
+                            className="w-full p-2 border rounded-md text-sm" 
+                            rows={3}
+                            placeholder="Descreva as características do Perfil B..."
+                          />
+                          <p className="text-sm text-gray-600">Necessidades principais:</p>
+                          <textarea 
+                            className="w-full p-2 border rounded-md text-sm" 
+                            rows={3}
+                            placeholder="Liste as principais necessidades..."
+                          />
+                        </div>
+                      </Card>
+
+                      {/* Perfil C (Admin) */}
+                      <Card className="p-4">
+                        <h4 className="font-medium mb-2">Administrador</h4>
+                        <div className="space-y-2">
+                          <p className="text-sm text-gray-600">Características principais:</p>
+                          <textarea 
+                            className="w-full p-2 border rounded-md text-sm" 
+                            rows={3}
+                            placeholder="Descreva as características do Admin..."
+                          />
+                          <p className="text-sm text-gray-600">Necessidades principais:</p>
+                          <textarea 
+                            className="w-full p-2 border rounded-md text-sm" 
+                            rows={3}
+                            placeholder="Liste as principais necessidades..."
+                          />
+                        </div>
+                      </Card>
+                    </div>
+                  </div>
+
+                  {/* Áreas do Sistema */}
+                  <div>
+                    <h3 className="text-lg font-semibold mb-4">Áreas do Sistema</h3>
+                    <div className="space-y-6">
+                      {/* Área Perfil A */}
+                      <div>
+                        <h4 className="font-medium mb-3">Área do Perfil A (/perfilA/*)</h4>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div>
+                            <h5 className="text-sm font-medium mb-2">Páginas/Rotas</h5>
+                            <div className="space-y-2">
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="/perfilA/dashboard"
+                              />
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="/perfilA/config"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <h5 className="text-sm font-medium mb-2">Funcionalidades</h5>
+                            <div className="space-y-2">
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="Funcionalidade 1"
+                              />
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="Funcionalidade 2"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Área Perfil B */}
+                      <div>
+                        <h4 className="font-medium mb-3">Área do Perfil B (/perfilB/*)</h4>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div>
+                            <h5 className="text-sm font-medium mb-2">Páginas/Rotas</h5>
+                            <div className="space-y-2">
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="/perfilB/home"
+                              />
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="/perfilB/perfil"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <h5 className="text-sm font-medium mb-2">Funcionalidades</h5>
+                            <div className="space-y-2">
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="Funcionalidade 1"
+                              />
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="Funcionalidade 2"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Área Admin */}
+                      <div>
+                        <h4 className="font-medium mb-3">Área Administrativa (/admin/*)</h4>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div>
+                            <h5 className="text-sm font-medium mb-2">Páginas/Rotas</h5>
+                            <div className="space-y-2">
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="/admin/dashboard"
+                              />
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="/admin/users"
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <h5 className="text-sm font-medium mb-2">Funcionalidades</h5>
+                            <div className="space-y-2">
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="Funcionalidade 1"
+                              />
+                              <input 
+                                type="text" 
+                                className="w-full p-2 border rounded-md"
+                                placeholder="Funcionalidade 2"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Diagrama de Interações */}
+                  <div>
+                    <h3 className="text-lg font-semibold mb-4">Interações entre Áreas</h3>
+                    <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
+                      <pre className="mermaid text-sm">
+                        {`
+graph TD
+    %% Áreas Principais
+    PerfilA[Área Perfil A]
+    PerfilB[Área Perfil B]
+    Admin[Área Admin]
+    
+    %% Interações PerfilA
+    PerfilA --> |"Cria/Gerencia"| Conteudo[Conteúdo]
+    PerfilA --> |"Configura"| Config[Configurações]
+    PerfilA --> |"Visualiza"| Metricas[Métricas]
+    
+    %% Interações PerfilB
+    PerfilB --> |"Consome"| Conteudo
+    PerfilB --> |"Gera"| Feedback[Feedback]
+    
+    %% Interações Admin
+    Admin --> |"Gerencia"| PerfilA
+    Admin --> |"Gerencia"| PerfilB
+    Admin --> |"Monitora"| Sistema[Sistema]
+    
+    %% Fluxos de Dados
+    Conteudo --> |"Gera"| Metricas
+    Feedback --> |"Influencia"| Metricas
+    Sistema --> |"Controla"| Config
+                        `}
+                      </pre>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </CollapsibleContent>
