@@ -28,16 +28,11 @@ const Index = () => {
     }));
   };
 
-  const projects = [
+  const models = [
     {
-      title: "SaúdeJá",
-      description: "Plataforma Integrada de Bem-estar",
+      title: "Modelo 1",
+      description: "Documentação Completa de Projeto",
       route: "/"
-    },
-    {
-      title: "Projeto Bruno",
-      description: "Dashboard e Funcionalidades",
-      route: "/bruno"
     }
   ];
 
@@ -49,19 +44,19 @@ const Index = () => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="flex items-center gap-2">
-                Projetos
+                Modelos
                 <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
-              {projects.map((project) => (
+              {models.map((model) => (
                 <DropdownMenuItem
-                  key={project.route}
-                  onClick={() => navigate(project.route)}
+                  key={model.route}
+                  onClick={() => navigate(model.route)}
                   className="flex flex-col items-start"
                 >
-                  <span className="font-medium">{project.title}</span>
-                  <span className="text-sm text-gray-500">{project.description}</span>
+                  <span className="font-medium">{model.title}</span>
+                  <span className="text-sm text-gray-500">{model.description}</span>
                 </DropdownMenuItem>
               ))}
             </DropdownMenuContent>
@@ -231,7 +226,6 @@ flowchart LR
             </Card>
           </Collapsible>
 
-          {/* Funcionalidades */}
           <Collapsible open={openSections.features} onOpenChange={() => toggleSection("features")}>
             <Card>
               <CollapsibleTrigger className="w-full">
@@ -435,7 +429,6 @@ graph LR
             </Card>
           </Collapsible>
 
-          {/* Monetização */}
           <Collapsible open={openSections.monetization} onOpenChange={() => toggleSection("monetization")}>
             <Card>
               <CollapsibleTrigger className="w-full">
@@ -471,7 +464,6 @@ graph LR
             </Card>
           </Collapsible>
 
-          {/* Roadmap de Versões */}
           <Collapsible>
             <Card>
               <CardHeader>
@@ -629,7 +621,6 @@ gantt
             </Card>
           </Collapsible>
 
-          {/* Fluxos e Narrativas */}
           <Collapsible>
             <Card>
               <CardHeader>
