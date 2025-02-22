@@ -2,7 +2,6 @@
 import React, { useEffect, useRef } from "react";
 import mermaid from "mermaid";
 
-// Inicialização do mermaid com configurações padrão
 mermaid.initialize({
   startOnLoad: true,
   theme: "default",
@@ -31,3 +30,4 @@ const Mermaid: React.FC<MermaidProps> = ({ chart }) => {
 };
 
 export default Mermaid;
+

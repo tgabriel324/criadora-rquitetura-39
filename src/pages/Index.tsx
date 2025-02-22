@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
+import Mermaid from "@/components/ui/mermaid";
 
 const Index = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
@@ -53,8 +54,8 @@ const Index = () => {
           </CardHeader>
           <CardContent>
             <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
-              <pre className="mermaid text-sm">
-                {`
+              <Mermaid
+                chart={`
 flowchart LR
     SaudeJa((SaúdeJá))
 
@@ -121,14 +122,8 @@ flowchart LR
     Pedidos --> |Dados| Analytics
     Vendedores --> |Catálogo| Produtos
     Produtos --> |Compra| Pedidos
-
-    %% Conexões Cruzadas
-    Consultas --> |Recomendação| Produtos
-    Tracking --> |Dados| Analytics
-    Comunidade --> |Avaliações| Produtos
-    DashPro --> |Prescrição| Pedidos
                 `}
-              </pre>
+              />
             </div>
           </CardContent>
         </Card>
@@ -338,8 +333,8 @@ flowchart LR
                   <div>
                     <h3 className="font-semibold text-xl mb-4 text-primary">Conexões entre Funcionalidades</h3>
                     <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
-                      <pre className="mermaid text-sm">
-                        {`
+                      <Mermaid
+                        chart={`
 graph LR
     %% Área do Usuário
     Dashboard["/dashboard"] --> Consultas["/consultas"]
@@ -365,8 +360,8 @@ graph LR
     Pacientes --> |"Visualiza"| Tracking
     Content --> |"Alimenta"| Dashboard
     Market --> |"Gerencia"| Loja
-                        `}
-                      </pre>
+                      `}
+                      />
                     </div>
                   </div>
                 </div>
@@ -530,8 +525,8 @@ graph LR
                 <div className="mt-8">
                   <h3 className="font-semibold text-xl mb-4">Evolução das Versões</h3>
                   <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
-                    <pre className="mermaid text-sm">
-                      {`
+                    <Mermaid
+                      chart={`
 gantt
     title Roadmap de Desenvolvimento
     dateFormat YYYY-MM
@@ -553,7 +548,7 @@ gantt
     Recursos Enterprise         :2025-02, 4m
     Expansão Internacional      :2025-05, 3m
                       `}
-                    </pre>
+                    />
                   </div>
                 </div>
               </div>
@@ -572,8 +567,8 @@ gantt
             </CardHeader>
             <CardContent>
               <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
-                <pre className="mermaid text-sm">
-                  {`
+                <Mermaid
+                  chart={`
 graph TD
     %% Fluxos de Entrada
     subgraph Entrada["Fluxos de Entrada"]
@@ -640,7 +635,7 @@ graph TD
     Comunidade --> |"Impacta"| CatalogoProdutos
     GestaoPacientes --> |"Integra"| Marketplace
                   `}
-                </pre>
+                />
               </div>
 
               <div className="mt-6 space-y-6">
