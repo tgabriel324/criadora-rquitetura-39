@@ -794,30 +794,23 @@ gantt
               <div>
                 <h3 className="text-lg font-semibold mb-3">1. Visão Geral do Projeto</h3>
                 <div className="space-y-2 pl-4">
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Qual o problema específico que o projeto resolve?"
-                    />
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Quem são os stakeholders principais?"
-                    />
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Qual é o objetivo final do projeto?"
-                    />
-                  </div>
+                  {[
+                    "Qual o problema específico que o projeto resolve?",
+                    "Quem são os stakeholders principais?",
+                    "Qual é o objetivo final do projeto?",
+                    "Qual é o valor único que ele entrega?",
+                    "Em quanto tempo precisa estar pronto?",
+                    "Qual é o orçamento disponível?"
+                  ].map((pergunta, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <div className="min-w-4 mt-1">•</div>
+                      <input 
+                        type="text" 
+                        className="w-full p-2 border rounded-md" 
+                        defaultValue={pergunta}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -825,158 +818,48 @@ gantt
               <div>
                 <h3 className="text-lg font-semibold mb-3">2. Público-Alvo</h3>
                 <div className="space-y-2 pl-4">
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Quem são os usuários principais?"
-                    />
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Quais são suas dores e necessidades?"
-                    />
-                  </div>
+                  {[
+                    "Quem são os usuários principais?",
+                    "Quais são suas dores e necessidades?",
+                    "Qual é a faixa etária do público?",
+                    "Qual é o comportamento digital desse público?",
+                    "Onde esse público está localizado?",
+                    "Como eles interagem com soluções similares hoje?"
+                  ].map((pergunta, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <div className="min-w-4 mt-1">•</div>
+                      <input 
+                        type="text" 
+                        className="w-full p-2 border rounded-md" 
+                        defaultValue={pergunta}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Modelo de Negócio */}
+              {/* Perfis de Usuário */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">3. Modelo de Negócio</h3>
+                <h3 className="text-lg font-semibold mb-3">3. Perfis de Usuário</h3>
                 <div className="space-y-2 pl-4">
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Como o projeto vai gerar receita?"
-                    />
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Qual é o modelo de precificação?"
-                    />
-                  </div>
+                  {[
+                    "Quais são os diferentes tipos de usuário do sistema?",
+                    "Quais permissões cada perfil deve ter?",
+                    "Como cada perfil interage com o sistema?",
+                    "Quais são as principais ações de cada perfil?",
+                    "Quais métricas são importantes para cada perfil?"
+                  ].map((pergunta, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <div className="min-w-4 mt-1">•</div>
+                      <input 
+                        type="text" 
+                        className="w-full p-2 border rounded-md" 
+                        defaultValue={pergunta}
+                      />
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Requisitos Técnicos */}
+              {/* Funcionalidades */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">4. Requisitos Técnicos</h3>
-                <div className="space-y-2 pl-4">
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Quais tecnologias devem ser utilizadas?"
-                    />
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Qual é a expectativa de escala?"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* UX e Analytics */}
-              <div>
-                <h3 className="text-lg font-semibold mb-3">5. Experiência e Análise</h3>
-                <div className="space-y-2 pl-4">
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Quais são os principais fluxos de usuário?"
-                    />
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="min-w-4 mt-1">•</div>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border rounded-md" 
-                      defaultValue="Quais métricas precisam ser monitoradas?"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Seção de Observações Importantes */}
-        <Card>
-          <CardHeader>
-            <div className="flex items-center gap-2">
-              <AlertTriangle className="h-5 w-5 text-yellow-500" />
-              <CardTitle>Observações Importantes</CardTitle>
-            </div>
-            <CardDescription>
-              Pontos críticos e considerações especiais para o projeto
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <InfoIcon className="h-4 w-4" />
-                  Pontos de Atenção
-                </h3>
-                <div className="space-y-2">
-                  <textarea 
-                    className="w-full p-2 border rounded-md" 
-                    rows={3}
-                    placeholder="Decisões pendentes, riscos identificados..."
-                  />
-                </div>
-              </div>
-
-              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <Lightbulb className="h-4 w-4" />
-                  Sugestões de Melhoria
-                </h3>
-                <div className="space-y-2">
-                  <textarea 
-                    className="w-full p-2 border rounded-md" 
-                    rows={3}
-                    placeholder="Ideias para evolução do projeto..."
-                  />
-                </div>
-              </div>
-
-              <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
-                <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <HelpCircle className="h-4 w-4" />
-                  Pontos a Esclarecer
-                </h3>
-                <div className="space-y-2">
-                  <textarea 
-                    className="w-full p-2 border rounded-md" 
-                    rows={3}
-                    placeholder="Questões que precisam ser esclarecidas..."
-                  />
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-      </div>
-    </div>
-  );
-};
-
-export default Modelo1;
