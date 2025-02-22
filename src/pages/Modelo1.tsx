@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
@@ -197,47 +196,285 @@ erDiagram
           </Card>
         </Collapsible>
 
-        {/* 5. Cronograma */}
-        <Collapsible open={openSections.planning}>
+        {/* 5. Modelo de Negócio e Monetização */}
+        <Collapsible>
           <Card>
-            <CardHeader className="cursor-pointer" onClick={() => toggleSection("planning")}>
-              <div className="flex items-center gap-2">
-                <List className="h-5 w-5" />
-                <CardTitle>5. Cronograma e Marcos</CardTitle>
-              </div>
-              <CardDescription>Planejamento e Prazos</CardDescription>
+            <CardHeader>
+              <CardTitle>Modelo de Negócio e Monetização</CardTitle>
+              <CardDescription>
+                Estratégias de monetização e análise de mercado
+              </CardDescription>
             </CardHeader>
-            <CollapsibleContent>
-              <CardContent>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="font-semibold mb-2">5.1 Fases do Projeto</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <input type="text" className="w-full p-2 border rounded-md" placeholder="Fase 1: Planejamento" />
-                        <input type="date" className="p-2 border rounded-md" />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <input type="text" className="w-full p-2 border rounded-md" placeholder="Fase 2: Desenvolvimento" />
-                        <input type="date" className="p-2 border rounded-md" />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <input type="text" className="w-full p-2 border rounded-md" placeholder="Fase 3: Testes" />
-                        <input type="date" className="p-2 border rounded-md" />
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <input type="text" className="w-full p-2 border rounded-md" placeholder="Fase 4: Implantação" />
-                        <input type="date" className="p-2 border rounded-md" />
+            <CardContent>
+              <div className="space-y-8">
+                {/* Modelo de Negócio */}
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">5.1 Modelo de Negócio</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-medium mb-2">Proposta de Valor</h4>
+                      <textarea
+                        className="w-full p-2 border rounded-md"
+                        rows={3}
+                        placeholder="Descreva a proposta de valor única do projeto..."
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2">Mercado-Alvo</h4>
+                      <textarea
+                        className="w-full p-2 border rounded-md"
+                        rows={3}
+                        placeholder="Defina o mercado-alvo e seu tamanho..."
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Análise Competitiva */}
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">5.2 Análise Competitiva</h3>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="font-medium">Concorrente</div>
+                    <div className="font-medium">Diferenciais</div>
+                    <div className="font-medium">Nossa Vantagem</div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-4 mt-2">
+                    <input type="text" className="p-2 border rounded-md" placeholder="Nome do concorrente..." />
+                    <input type="text" className="p-2 border rounded-md" placeholder="Principais diferenciais..." />
+                    <input type="text" className="p-2 border rounded-md" placeholder="Nossa vantagem competitiva..." />
+                  </div>
+                </div>
+
+                {/* Estratégia de Monetização */}
+                <div>
+                  <h3 className="text-lg font-semibold mb-4">5.3 Estratégia de Monetização</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-medium mb-2">Fontes de Receita</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <input type="text" className="p-2 border rounded-md flex-grow" placeholder="Fonte de receita..." />
+                          <select className="p-2 border rounded-md w-32">
+                            <option value="recorrente">Recorrente</option>
+                            <option value="unica">Única</option>
+                          </select>
+                          <input type="text" className="p-2 border rounded-md w-32" placeholder="Valor (R$)" />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </CollapsibleContent>
+              </div>
+            </CardContent>
           </Card>
         </Collapsible>
 
-        {/* 6. Riscos e Mitigação */}
+        {/* 6. Fluxos e Narrativas do Sistema */}
+        <Collapsible>
+          <Card>
+            <CardHeader>
+              <CardTitle>Fluxos e Narrativas do Sistema</CardTitle>
+              <CardDescription>
+                Detalhamento dos principais fluxos e jornadas de usuários na plataforma
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
+                <pre className="mermaid text-sm">
+                  {`
+graph TD
+    %% Fluxos de Entrada
+    subgraph Entrada["Fluxos de Entrada"]
+        Marketing["Marketing Digital"] --> Landing
+        Indicacao["Indicação"] --> Landing
+        Landing --> Cadastro
+        Cadastro --> |"Perfil A"| OnboardingA["Onboarding A"]
+        Cadastro --> |"Perfil B"| OnboardingB["Onboarding B"]
+        OnboardingA --> ConfigInicial["Configuração Inicial"]
+        OnboardingB --> Descoberta["Descoberta"]
+    end
+
+    %% Jornada Principal A
+    subgraph Perfil_A["Jornada Principal A"]
+        ConfigInicial --> Criacao["Criação"]
+        Criacao --> Publicacao["Publicação"]
+        Publicacao --> |"Gera"| Receita["Receita"]
+        Receita --> |"Gera"| Metricas["Métricas"]
+        Metricas --> |"Influencia"| NovoConteudo["Novo Conteúdo"]
+    end
+
+    %% Jornada Principal B
+    subgraph Perfil_B["Jornada Principal B"]
+        Descoberta --> Consumo["Consumo"]
+        Consumo --> Biblioteca["Biblioteca"]
+        Biblioteca --> Interacao["Interação"]
+        Interacao --> |"Gera"| Compartilhamento["Compartilhamento"]
+        Compartilhamento --> |"Influencia"| Descoberta
+    end
+
+    %% Fluxo Financeiro
+    subgraph Financeiro["Fluxo Financeiro"]
+        Receita --> ProcessamentoPagamento["Processamento"]
+        ProcessamentoPagamento --> Split["Split"]
+        Split --> Comissao["Comissão"]
+        Split --> Repasse["Repasse"]
+    end
+
+    %% Conexões entre Fluxos
+    Interacao --> |"Feedback"| Metricas
+    Consumo --> |"Gera"| ProcessamentoPagamento
+    ConfigInicial --> |"Configura"| Receita
+                  `}
+                </pre>
+              </div>
+
+              <div className="mt-6 space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Fluxo Principal A</h3>
+                  <p className="text-gray-600">
+                    Descreva aqui o fluxo principal do primeiro tipo de usuário, desde o cadastro até as principais ações.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Fluxo Principal B</h3>
+                  <p className="text-gray-600">
+                    Descreva aqui o fluxo principal do segundo tipo de usuário, incluindo interações e objetivos.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Fluxo Financeiro</h3>
+                  <p className="text-gray-600">
+                    Detalhamento do fluxo financeiro, incluindo processamento, divisões e repasses.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Collapsible>
+
+        {/* 7. Roadmap de Versões */}
+        <Collapsible>
+          <Card>
+            <CardHeader>
+              <CardTitle>Roadmap de Versões</CardTitle>
+              <CardDescription>
+                Evolução planejada do sistema, desde MVP até versões completas
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-8">
+                {/* MVP - Versão 1.0 */}
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h3 className="font-semibold text-xl mb-3">Versão 1.0 (MVP)</h3>
+                  <p className="text-gray-600 mb-4">Funcionalidades essenciais para validação do produto</p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium mb-2">Perfil A</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Funcionalidade essencial 1</li>
+                        <li>Funcionalidade essencial 2</li>
+                        <li>Funcionalidade essencial 3</li>
+                        <li>Funcionalidade essencial 4</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2">Perfil B</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Funcionalidade essencial 1</li>
+                        <li>Funcionalidade essencial 2</li>
+                        <li>Funcionalidade essencial 3</li>
+                        <li>Funcionalidade essencial 4</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Versão 2.0 */}
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h3 className="font-semibold text-xl mb-3">Versão 2.0</h3>
+                  <p className="text-gray-600 mb-4">Expansão de funcionalidades e melhorias na experiência</p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium mb-2">Novas Funcionalidades</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Nova funcionalidade 1</li>
+                        <li>Nova funcionalidade 2</li>
+                        <li>Nova funcionalidade 3</li>
+                        <li>Nova funcionalidade 4</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2">Melhorias</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Melhoria 1</li>
+                        <li>Melhoria 2</li>
+                        <li>Melhoria 3</li>
+                        <li>Melhoria 4</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Versão 3.0 */}
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h3 className="font-semibold text-xl mb-3">Versão 3.0</h3>
+                  <p className="text-gray-600 mb-4">Recursos premium e expansão de mercado</p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-medium mb-2">Recursos Avançados</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Recurso avançado 1</li>
+                        <li>Recurso avançado 2</li>
+                        <li>Recurso avançado 3</li>
+                        <li>Recurso avançado 4</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2">Expansões</h4>
+                      <ul className="list-disc pl-5 text-gray-600 space-y-1">
+                        <li>Expansão 1</li>
+                        <li>Expansão 2</li>
+                        <li>Expansão 3</li>
+                        <li>Expansão 4</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Diagrama de Evolução */}
+                <div className="mt-8">
+                  <h3 className="font-semibold text-xl mb-4">Evolução das Versões</h3>
+                  <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
+                    <pre className="mermaid text-sm">
+                      {`
+gantt
+    title Roadmap de Desenvolvimento
+    dateFormat YYYY-MM
+    axisFormat %Y-%m
+    
+    section MVP (v1.0)
+    Funcionalidades Básicas      :2024-01, 4m
+    Validação com Usuários       :2024-03, 2m
+    
+    section Versão 2.0
+    Áudio e Assinaturas         :2024-05, 3m
+    Melhorias UX               :2024-07, 2m
+    
+    section Versão 3.0
+    App Mobile                 :2024-09, 4m
+    Marketplace                :2024-11, 3m
+                      `}
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </Collapsible>
+
+        {/* 8. Riscos e Mitigação */}
         <Collapsible open={openSections.risks}>
           <Card>
             <CardHeader className="cursor-pointer" onClick={() => toggleSection("risks")}>
@@ -270,7 +507,7 @@ erDiagram
           </Card>
         </Collapsible>
 
-        {/* 7. Documentação */}
+        {/* 9. Documentação */}
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
