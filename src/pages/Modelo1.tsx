@@ -814,17 +814,16 @@ gantt
                 </div>
               </div>
 
-              {/* Público-Alvo */}
+              {/* Cronograma e Marcos */}
               <div>
-                <h3 className="text-lg font-semibold mb-3">2. Público-Alvo</h3>
+                <h3 className="text-lg font-semibold mb-3">12. Cronograma e Marcos</h3>
                 <div className="space-y-2 pl-4">
                   {[
-                    "Quem são os usuários principais?",
-                    "Quais são suas dores e necessidades?",
-                    "Qual é a faixa etária do público?",
-                    "Qual é o comportamento digital desse público?",
-                    "Onde esse público está localizado?",
-                    "Como eles interagem com soluções similares hoje?"
+                    "Quais são os principais marcos do projeto?",
+                    "Qual é o prazo para cada fase?",
+                    "Quais são as dependências entre etapas?",
+                    "Como será feito o controle de progresso?",
+                    "Quais são os critérios de sucesso?"
                   ].map((pergunta, index) => (
                     <div key={index} className="flex items-start gap-2">
                       <div className="min-w-4 mt-1">•</div>
@@ -837,29 +836,70 @@ gantt
                   ))}
                 </div>
               </div>
+            </div>
+          </CardContent>
+        </Card>
 
-              {/* Perfis de Usuário */}
-              <div>
-                <h3 className="text-lg font-semibold mb-3">3. Perfis de Usuário</h3>
-                <div className="space-y-2 pl-4">
-                  {[
-                    "Quais são os diferentes tipos de usuário do sistema?",
-                    "Quais permissões cada perfil deve ter?",
-                    "Como cada perfil interage com o sistema?",
-                    "Quais são as principais ações de cada perfil?",
-                    "Quais métricas são importantes para cada perfil?"
-                  ].map((pergunta, index) => (
-                    <div key={index} className="flex items-start gap-2">
-                      <div className="min-w-4 mt-1">•</div>
-                      <input 
-                        type="text" 
-                        className="w-full p-2 border rounded-md" 
-                        defaultValue={pergunta}
-                      />
-                    </div>
-                  ))}
+        {/* Seção de Observações Importantes */}
+        <Card>
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <AlertTriangle className="h-5 w-5 text-yellow-500" />
+              <CardTitle>Observações Importantes</CardTitle>
+            </div>
+            <CardDescription>
+              Pontos críticos e considerações especiais para o projeto
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <InfoIcon className="h-4 w-4" />
+                  Pontos de Atenção
+                </h3>
+                <div className="space-y-2">
+                  <textarea 
+                    className="w-full p-2 border rounded-md" 
+                    rows={3}
+                    placeholder="Decisões pendentes, riscos identificados..."
+                  />
                 </div>
               </div>
 
-              {/* Funcionalidades */}
-              <div>
+              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <Lightbulb className="h-4 w-4" />
+                  Sugestões de Melhoria
+                </h3>
+                <div className="space-y-2">
+                  <textarea 
+                    className="w-full p-2 border rounded-md" 
+                    rows={3}
+                    placeholder="Ideias para evolução do projeto..."
+                  />
+                </div>
+              </div>
+
+              <div className="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                <h3 className="font-semibold mb-2 flex items-center gap-2">
+                  <HelpCircle className="h-4 w-4" />
+                  Pontos a Esclarecer
+                </h3>
+                <div className="space-y-2">
+                  <textarea 
+                    className="w-full p-2 border rounded-md" 
+                    rows={3}
+                    placeholder="Questões que precisam ser esclarecidas..."
+                  />
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+};
+
+export default Modelo1;
