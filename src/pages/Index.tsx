@@ -55,83 +55,78 @@ const Index = () => {
             <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
               <pre className="mermaid text-sm">
                 {`
-mindmap
-  root((SaúdeJá))
-    Área Pública
-      Landing Page
-        Hero Section
-        Features
-        Depoimentos
-      Blog
-        Artigos
-        Dicas
-        Notícias
-      Cadastro/Login
-      Preços/Planos
-    Área do Usuário
-      Dashboard
-        Métricas
-        Progresso
-        Lembretes
-      Consultas
-        Agendamento
-        Videochamada
-        Chat
-        Histórico
-      Tracking
-        Medidas Físicas
-        Humor/Bem-estar
-        Alimentação
-        Exercícios
-        Sono
-      Comunidade
-        Grupos
-        Fórums
-        Lives
-        Desafios
-    Área Profissional
-      Dashboard Pro
-        Métricas Pro
-        Notificações
-        Tasks
-      Pacientes
-        Lista
-        Prontuários
-        Prescrições
-      Agenda
-        Horários
-        Consultas
-        Bloqueios
-      Financeiro
-    Área Administrativa
-      Gestão Usuários
-        Cadastros
-        Permissões
-        Bloqueios
-      Financeiro
-        Pagamentos
-        Assinaturas
-        Comissões
-      Conteúdo
-        Blog
-        Emails
-        Notificações
-      Suporte
-    Marketplace
-      Produtos
-        Catálogo
-        Categorias
-        Promoções
-      Vendedores
-        Cadastro
-        Dashboard
-        Financeiro
-      Pedidos
-        Carrinho
-        Checkout
-        Entrega
-        Status
-      Analytics
+flowchart LR
+    SaudeJa((SaúdeJá))
+
+    %% Áreas Principais
+    AreaPublica[Área Pública]
+    AreaUsuario[Área do Usuário]
+    AreaPro[Área Profissional]
+    AreaAdmin[Área Administrativa]
+    Market[Marketplace]
+
+    %% Conexões Principais
+    SaudeJa --> AreaPublica & AreaUsuario & AreaPro & AreaAdmin & Market
+
+    %% Área Pública Detalhes
+    Landing[Landing Page]
+    Blog[Blog]
+    Cadastro[Cadastro/Login]
+    Precos[Preços/Planos]
+    
+    AreaPublica --> Landing & Blog & Cadastro & Precos
+    Landing --> |Acesso| Cadastro
+    Blog --> |Conteúdo| Landing
+    Precos --> |Upgrade| AreaUsuario
+
+    %% Área Usuário Detalhes
+    Dashboard[Dashboard]
+    Consultas[Consultas]
+    Tracking[Tracking]
+    Comunidade[Comunidade]
+
+    AreaUsuario --> Dashboard & Consultas & Tracking & Comunidade
+    Dashboard --> |Agenda| Consultas
+    Tracking --> |Métricas| Dashboard
+    Comunidade --> |Interação| Consultas
+
+    %% Área Profissional Detalhes
+    DashPro[Dashboard Pro]
+    Pacientes[Pacientes]
+    Agenda[Agenda]
+    FinanceiroPro[Financeiro Pro]
+
+    AreaPro --> DashPro & Pacientes & Agenda & FinanceiroPro
+    Pacientes --> |Histórico| Agenda
+    DashPro --> |Métricas| FinanceiroPro
+
+    %% Área Admin Detalhes
+    GestaoUsers[Gestão Usuários]
+    Financeiro[Financeiro]
+    Conteudo[Conteúdo]
+    Suporte[Suporte]
+
+    AreaAdmin --> GestaoUsers & Financeiro & Conteudo & Suporte
+    GestaoUsers --> |Permissões| AreaUsuario & AreaPro
+    Conteudo --> |Publicação| Blog
+    Financeiro --> |Pagamentos| Market
+
+    %% Marketplace Detalhes
+    Produtos[Produtos]
+    Vendedores[Vendedores]
+    Pedidos[Pedidos]
+    Analytics[Analytics]
+
+    Market --> Produtos & Vendedores & Pedidos & Analytics
+    Pedidos --> |Dados| Analytics
+    Vendedores --> |Catálogo| Produtos
+    Produtos --> |Compra| Pedidos
+
+    %% Conexões Cruzadas
+    Consultas --> |Recomendação| Produtos
+    Tracking --> |Dados| Analytics
+    Comunidade --> |Avaliações| Produtos
+    DashPro --> |Prescrição| Pedidos
                 `}
               </pre>
             </div>
