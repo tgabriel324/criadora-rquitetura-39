@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
-import { Layers, Database, Server, Cog, List, Check, X, Folder, File, MessageCircleQuestion, AlertTriangle, Lightbulb, HelpCircle, InfoIcon } from "lucide-react";
+import { Layers, Database, Server, Cog, List, Check, X, Folder, MessageCircleQuestion, AlertTriangle, Lightbulb, HelpCircle, InfoIcon } from "lucide-react";
 import { useState } from "react";
 import Mermaid from "@/components/ui/mermaid";
 
@@ -853,4 +853,4 @@ gantt
                 <h3 className="text-lg font-semibold mb-3">3. Perfis de Usuário</h3>
                 <div className="space-y-2 pl-4">
                   {[
-                    "Quais são os diferentes
+                    "Quais são os diferentes tipos de
