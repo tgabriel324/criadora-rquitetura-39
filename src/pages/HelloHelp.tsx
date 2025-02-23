@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { VisionSection } from "@/components/modelo/sections/VisionSection";
+import { GeneralVisionSection } from "@/components/modelo/sections/GeneralVisionSection";
 import { OrganizationalSection } from "@/components/modelo/sections/OrganizationalSection";
 import { SystemAreasSection } from "@/components/modelo/sections/SystemAreasSection";
 import { RequirementsSection } from "@/components/modelo/sections/RequirementsSection";
@@ -14,7 +15,8 @@ import { RisksSection } from "@/components/modelo/sections/RisksSection";
 
 const HelloHelp = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
-    vision: true,
+    generalVision: true,
+    vision: false,
     organization: false,
     areas: false,
     requirements: false,
@@ -51,6 +53,11 @@ const HelloHelp = () => {
         </div>
 
         <div className="space-y-6">
+          <GeneralVisionSection 
+            isOpen={openSections.generalVision} 
+            onToggle={() => toggleSection("generalVision")} 
+          />
+
           <VisionSection 
             isOpen={openSections.vision} 
             onToggle={() => toggleSection("vision")} 
