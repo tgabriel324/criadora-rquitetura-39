@@ -9,17 +9,7 @@ interface FlowsSectionProps {
 }
 
 export const FlowsSection = ({ isOpen, onToggle }: FlowsSectionProps) => {
-  return (
-    <QuestionSection
-      title="6. Fluxos e Narrativas"
-      description="Fluxos principais do sistema"
-      icon={GitBranch}
-      isOpen={isOpen}
-      onToggle={onToggle}
-    >
-      <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
-        <pre className="mermaid text-sm">
-          {`
+  const flowsChart = `
 graph TD
     %% Fluxos de Entrada
     subgraph Entrada["Fluxos de Entrada"]
@@ -51,9 +41,37 @@ graph TD
         CriarPerfil --> |"Mentor"| DefinirEspecialidade["Definir Especialidade"]
         DefinirEspecialidade --> CriarAgenda["Criar Agenda"]
         CriarAgenda --> DisponibilizarHorarios["Disponibilizar Horários"]
+        DisponibilizarHorarios --> AgendamentoMentoria["Agendamento"]
+        AgendamentoMentoria --> SalaVirtual["Sala Virtual"]
+        SalaVirtual --> Certificado["Certificado"]
     end
-          `}
-        </pre>
+
+    %% Fluxo de Chat
+    subgraph Chat["Fluxo de Chat"]
+        Descoberta --> IniciarConversa["Iniciar Conversa"]
+        IniciarConversa --> NegociarServico["Negociar Serviço"]
+        NegociarServico --> FecharContrato["Fechar Contrato"]
+    end
+
+    %% Fluxo de Pagamento
+    subgraph Pagamento["Fluxo de Pagamento"]
+        FecharContrato --> ProcessarPagamento["Processar Pagamento"]
+        ProcessarPagamento --> ConfirmarPagamento["Confirmar Pagamento"]
+        ConfirmarPagamento --> LiberarServico["Liberar Serviço"]
+        LiberarPagamento["Liberar Pagamento"] --> ComissaoPlataforma["Comissão Plataforma"]
+    end
+  `;
+
+  return (
+    <QuestionSection
+      title="6. Fluxos e Narrativas"
+      description="Fluxos principais do sistema"
+      icon={GitBranch}
+      isOpen={isOpen}
+      onToggle={onToggle}
+    >
+      <div className="bg-white p-4 rounded-lg shadow-inner">
+        <Mermaid chart={flowsChart} />
       </div>
     </QuestionSection>
   );
