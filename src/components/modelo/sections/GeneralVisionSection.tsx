@@ -1,4 +1,3 @@
-
 import { Eye } from "lucide-react";
 import { QuestionSection } from "../QuestionSection";
 import Mermaid from "@/components/ui/mermaid";
@@ -53,29 +52,6 @@ graph TB
     Security & Integration --> Quality
     Clients --> Growth
     Partners --> Growth
-`;
-
-  const journeyChart = `
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#006D77', 'secondaryColor': '#83c5be', 'tertiaryColor': '#FF8533', 'primaryTextColor': '#221F26' }}}%%
-
-journey
-    title Jornadas Principais do Usuário
-    section Profissional
-        Cadastro: 5: Dados
-        Perfil: 3: Bio, Skills
-        Serviços: 4: Criar
-        Mentoria: 4: Configurar
-        Analytics: 3: Métricas
-    section Cliente
-        Registro: 5: Conta
-        Busca: 4: Filtros
-        Contratação: 5: Pagamento
-        Avaliação: 3: Review
-    section Mentoria
-        Agendamento: 5: Data
-        Preparação: 4: Material
-        Sessão: 5: Virtual
-        Certificado: 4: Emissão
 `;
 
   return (
@@ -144,11 +120,142 @@ journey
           </div>
         </div>
 
-        {/* Jornadas do Usuário */}
+        {/* Nova Jornada do Usuário */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-primary">🚀 Jornadas do Usuário</h3>
-          <div className="bg-white p-4 rounded-lg shadow-inner">
-            <Mermaid chart={journeyChart} />
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Jornada do Profissional */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h4 className="font-medium text-primary mb-4 flex items-center gap-2">
+                <span className="text-xl">👩‍💼</span> Profissional
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+                  <div>
+                    <h5 className="font-medium">Cadastro</h5>
+                    <p className="text-sm text-gray-600">Criação de perfil profissional com dados e certificações</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">2</div>
+                  <div>
+                    <h5 className="font-medium">Configuração</h5>
+                    <p className="text-sm text-gray-600">Definição de serviços, preços e disponibilidade</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">3</div>
+                  <div>
+                    <h5 className="font-medium">Engajamento</h5>
+                    <p className="text-sm text-gray-600">Participação em salas temáticas e networking</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">4</div>
+                  <div>
+                    <h5 className="font-medium">Monetização</h5>
+                    <p className="text-sm text-gray-600">Prestação de serviços e recebimento de pagamentos</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">5</div>
+                  <div>
+                    <h5 className="font-medium">Crescimento</h5>
+                    <p className="text-sm text-gray-600">Análise de métricas e expansão de serviços</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Jornada do Cliente */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h4 className="font-medium text-primary mb-4 flex items-center gap-2">
+                <span className="text-xl">🤝</span> Cliente
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+                  <div>
+                    <h5 className="font-medium">Registro</h5>
+                    <p className="text-sm text-gray-600">Criação de conta com necessidades específicas</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">2</div>
+                  <div>
+                    <h5 className="font-medium">Busca</h5>
+                    <p className="text-sm text-gray-600">Exploração de profissionais e serviços disponíveis</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">3</div>
+                  <div>
+                    <h5 className="font-medium">Contratação</h5>
+                    <p className="text-sm text-gray-600">Seleção e negociação com profissionais</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">4</div>
+                  <div>
+                    <h5 className="font-medium">Experiência</h5>
+                    <p className="text-sm text-gray-600">Recebimento do serviço contratado</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">5</div>
+                  <div>
+                    <h5 className="font-medium">Avaliação</h5>
+                    <p className="text-sm text-gray-600">Feedback e recomendações do serviço</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Jornada do Mentor */}
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h4 className="font-medium text-primary mb-4 flex items-center gap-2">
+                <span className="text-xl">👨‍🏫</span> Mentor
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="bg-orange-400 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">1</div>
+                  <div>
+                    <h5 className="font-medium">Qualificação</h5>
+                    <p className="text-sm text-gray-600">Validação de experiência e especialidades</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-orange-400 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">2</div>
+                  <div>
+                    <h5 className="font-medium">Programação</h5>
+                    <p className="text-sm text-gray-600">Criação de agenda e formato das mentorias</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-orange-400 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">3</div>
+                  <div>
+                    <h5 className="font-medium">Mentorias</h5>
+                    <p className="text-sm text-gray-600">Condução das sessões de mentoria</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-orange-400 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">4</div>
+                  <div>
+                    <h5 className="font-medium">Conteúdo</h5>
+                    <p className="text-sm text-gray-600">Criação de material complementar</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="bg-orange-400 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0">5</div>
+                  <div>
+                    <h5 className="font-medium">Certificação</h5>
+                    <p className="text-sm text-gray-600">Emissão de certificados e avaliações</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
