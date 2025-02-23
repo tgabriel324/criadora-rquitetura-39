@@ -31,57 +31,63 @@ const HelloHelp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-5xl mx-auto mb-8 text-center">
-        <h1 className="text-4xl font-bold text-primary mb-4">Hello Help</h1>
-        <p className="text-xl text-gray-600">Estrutura Completa para Planejamento e Execução</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-primary-light/10 to-secondary-light/10">
+      <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
+            Hello Help
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Transforme seu conhecimento em oportunidades reais
+          </p>
+        </div>
 
-      <div className="max-w-5xl mx-auto grid gap-6">
-        <VisionSection 
-          isOpen={openSections.overview} 
-          onToggle={() => toggleSection("overview")} 
-        />
-        
-        <RequirementsSection 
-          isOpen={openSections.requirements} 
-          onToggle={() => toggleSection("requirements")} 
-        />
+        <div className="space-y-6">
+          <VisionSection 
+            isOpen={openSections.overview} 
+            onToggle={() => toggleSection("overview")} 
+          />
+          
+          <RequirementsSection 
+            isOpen={openSections.requirements} 
+            onToggle={() => toggleSection("requirements")} 
+          />
 
-        <ArchitectureSection 
-          isOpen={openSections.architecture} 
-          onToggle={() => toggleSection("architecture")} 
-        />
+          <ArchitectureSection 
+            isOpen={openSections.architecture} 
+            onToggle={() => toggleSection("architecture")} 
+          />
 
-        <DatabaseSection 
-          isOpen={openSections.database} 
-          onToggle={() => toggleSection("database")} 
-        />
+          <DatabaseSection 
+            isOpen={openSections.database} 
+            onToggle={() => toggleSection("database")} 
+          />
 
-        <UserProfilesSection 
-          isOpen={openSections.userProfiles} 
-          onToggle={() => toggleSection("userProfiles")} 
-        />
+          <UserProfilesSection 
+            isOpen={openSections.userProfiles} 
+            onToggle={() => toggleSection("userProfiles")} 
+          />
 
-        <FlowsSection 
-          isOpen={openSections.flows} 
-          onToggle={() => toggleSection("flows")} 
-        />
+          <FlowsSection 
+            isOpen={openSections.flows} 
+            onToggle={() => toggleSection("flows")} 
+          />
 
-        <MonetizationSection
-          isOpen={openSections.monetization}
-          onToggle={() => toggleSection("monetization")}
-        />
+          <MonetizationSection
+            isOpen={openSections.monetization}
+            onToggle={() => toggleSection("monetization")}
+          />
 
-        <RoadmapSection
-          isOpen={openSections.roadmap}
-          onToggle={() => toggleSection("roadmap")}
-        />
+          <RoadmapSection
+            isOpen={openSections.roadmap}
+            onToggle={() => toggleSection("roadmap")}
+          />
 
-        <RisksSection
-          isOpen={openSections.risks}
-          onToggle={() => toggleSection("risks")}
-        />
+          <RisksSection
+            isOpen={openSections.risks}
+            onToggle={() => toggleSection("risks")}
+          />
+        </div>
       </div>
     </div>
   );

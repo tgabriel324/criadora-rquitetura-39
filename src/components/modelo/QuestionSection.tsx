@@ -22,11 +22,14 @@ export const QuestionSection = ({
 }: QuestionSectionProps) => {
   return (
     <Collapsible open={isOpen}>
-      <Card>
-        <CardHeader className="cursor-pointer" onClick={onToggle}>
+      <Card className="border-primary/10 hover:border-primary/20 transition-colors">
+        <CardHeader 
+          className="cursor-pointer hover:bg-primary/5 transition-colors rounded-t-lg" 
+          onClick={onToggle}
+        >
           <div className="flex items-center gap-2">
-            <Icon className="h-5 w-5" />
-            <CardTitle>{title}</CardTitle>
+            <Icon className="h-5 w-5 text-primary" />
+            <CardTitle className="text-primary">{title}</CardTitle>
           </div>
           <CardDescription>{description}</CardDescription>
         </CardHeader>
