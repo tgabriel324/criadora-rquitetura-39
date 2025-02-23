@@ -1,4 +1,3 @@
-<lov-code>
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
@@ -16,7 +15,8 @@ const Modelo1 = () => {
     flows: false,
     monetization: false,
     roadmap: false,
-    risks: false
+    risks: false,
+    questions: true
   });
 
   const toggleSection = (section: string) => {
@@ -788,69 +788,68 @@ gantt
         </Card>
 
         {/* Seção de Perguntas Essenciais */}
-        <Card>
-          <CardHeader>
-            <div className="flex items-center gap-2">
-              <MessageCircleQuestion className="h-5 w-5" />
-              <CardTitle>Perguntas Essenciais do Projeto</CardTitle>
-            </div>
-            <CardDescription>
-              Questões fundamentais para o completo entendimento e documentação do projeto
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-6">
-              {/* Visão Geral */}
-              <div>
-                <h3 className="text-lg font-semibold mb-3">1. Visão Geral do Projeto</h3>
-                <div className="space-y-2 pl-4">
-                  {[
-                    "Qual o problema específico que o projeto resolve?",
-                    "Quem são os stakeholders principais?",
-                    "Qual é o objetivo final do projeto?",
-                    "Qual é o valor único que ele entrega?",
-                    "Em quanto tempo precisa estar pronto?",
-                    "Qual é o orçamento disponível?"
-                  ].map((pergunta, index) => (
-                    <div key={index} className="flex items-start gap-2">
-                      <div className="min-w-4 mt-1">•</div>
-                      <input 
-                        type="text" 
-                        className="w-full p-2 border rounded-md" 
-                        defaultValue={pergunta}
-                      />
-                    </div>
-                  ))}
-                </div>
+        <Collapsible open={openSections.questions}>
+          <Card>
+            <CardHeader className="cursor-pointer" onClick={() => toggleSection("questions")}>
+              <div className="flex items-center gap-2">
+                <MessageCircleQuestion className="h-5 w-5" />
+                <CardTitle>Perguntas Essenciais do Projeto</CardTitle>
               </div>
-
-              {/* Público-Alvo */}
-              <div>
-                <h3 className="text-lg font-semibold mb-3">2. Público-Alvo</h3>
-                <div className="space-y-2 pl-4">
-                  {[
-                    "Quem são os usuários principais?",
-                    "Quais são suas dores e necessidades?",
-                    "Qual é a faixa etária do público?",
-                    "Qual é o comportamento digital desse público?",
-                    "Onde esse público está localizado?",
-                    "Como eles interagem com soluções similares hoje?"
-                  ].map((pergunta, index) => (
-                    <div key={index} className="flex items-start gap-2">
-                      <div className="min-w-4 mt-1">•</div>
-                      <input 
-                        type="text" 
-                        className="w-full p-2 border rounded-md" 
-                        defaultValue={pergunta}
-                      />
+              <CardDescription>
+                Questões fundamentais para o completo entendimento e documentação do projeto
+              </CardDescription>
+            </CardHeader>
+            <CollapsibleContent>
+              <CardContent>
+                <div className="space-y-6">
+                  {/* Visão Geral */}
+                  <div>
+                    <h3 className="text-lg font-semibold mb-3">1. Visão Geral do Projeto</h3>
+                    <div className="space-y-2 pl-4">
+                      {[
+                        "Qual o problema específico que o projeto resolve?",
+                        "Quem são os stakeholders principais?",
+                        "Qual é o objetivo final do projeto?",
+                        "Qual é o valor único que ele entrega?",
+                        "Em quanto tempo precisa estar pronto?",
+                        "Qual é o orçamento disponível?"
+                      ].map((pergunta, index) => (
+                        <div key={index} className="flex items-start gap-2">
+                          <div className="min-w-4 mt-1">•</div>
+                          <input 
+                            type="text" 
+                            className="w-full p-2 border rounded-md" 
+                            defaultValue={pergunta}
+                          />
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </div>
 
-              {/* Perfis de Usuário */}
-              <div>
-                <h3 className="text-lg font-semibold mb-3">3. Perfis de Usuário</h3>
-                <div className="space-y-2 pl-4">
-                  {[
-                    "Quais são os diferentes tipos de
+                  {/* Público-Alvo */}
+                  <div>
+                    <h3 className="text-lg font-semibold mb-3">2. Público-Alvo</h3>
+                    <div className="space-y-2 pl-4">
+                      {[
+                        "Quem são os usuários principais?",
+                        "Quais são suas dores e necessidades?",
+                        "Qual é a faixa etária do público?",
+                        "Qual é o comportamento digital desse público?",
+                        "Onde esse público está localizado?",
+                        "Como eles interagem com soluções similares hoje?"
+                      ].map((pergunta, index) => (
+                        <div key={index} className="flex items-start gap-2">
+                          <div className="min-w-4 mt-1">•</div>
+                          <input 
+                            type="text" 
+                            className="w-full p-2 border rounded-md" 
+                            defaultValue={pergunta}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Perfis de Usuário */}
+                  <div>
+                    <h3 className="text-lg font-semibold mb-3">
