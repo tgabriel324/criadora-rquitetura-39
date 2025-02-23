@@ -34,9 +34,13 @@ const HelloHelp = () => {
     <div className="min-h-screen bg-gradient-to-br from-primary-light/10 to-secondary-light/10">
       <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-4">
-            Hello Help
-          </h1>
+          <div className="mb-4">
+            <img
+              src="/logo-hello-help.png"
+              alt="Hello Help Logo"
+              className="h-20 mx-auto"
+            />
+          </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Transforme seu conhecimento em oportunidades reais
           </p>
