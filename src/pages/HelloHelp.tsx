@@ -1,7 +1,7 @@
-
 import { useState } from "react";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import html2pdf from "html2pdf.js";
 import { VisionSection } from "@/components/modelo/sections/VisionSection";
 import { GeneralVisionSection } from "@/components/modelo/sections/GeneralVisionSection";
 import { OrganizationalSection } from "@/components/modelo/sections/OrganizationalSection";
@@ -41,19 +41,28 @@ const HelloHelp = () => {
   };
 
   const handleDownloadPDF = () => {
-    window.print();
+    const element = document.documentElement;
+    
+    const opt = {
+      margin: 1,
+      filename: 'hello-help-documento.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-light/10 to-secondary-light/10">
       <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
-        {/* Botão de Download PDF */}
         <div className="absolute top-4 right-4">
           <Button
             onClick={handleDownloadPDF}
             variant="outline"
             size="sm"
-            className="print:hidden"
+            className="print:hidden hover:bg-primary hover:text-white transition-colors"
           >
             <Download className="w-4 h-4 mr-2" />
             Download PDF
