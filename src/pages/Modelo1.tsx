@@ -1,10 +1,10 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
 import { Layers, Database, Server, Cog, List, Check, X, Folder, MessageCircleQuestion } from "lucide-react";
 import { useState } from "react";
 import Mermaid from "@/components/ui/mermaid";
+import { VisionSection } from "@/components/modelo/sections/VisionSection";
 
 const Modelo1 = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
@@ -35,49 +35,11 @@ const Modelo1 = () => {
       </div>
 
       <div className="max-w-5xl mx-auto grid gap-6">
-        {/* 1. Visão Geral */}
-        <Collapsible open={openSections.overview}>
-          <Card>
-            <CardHeader className="cursor-pointer" onClick={() => toggleSection("overview")}>
-              <div className="flex items-center gap-2">
-                <Layers className="h-5 w-5" />
-                <CardTitle>1. Visão Geral do Projeto</CardTitle>
-              </div>
-              <CardDescription>Definição clara dos objetivos e escopo</CardDescription>
-            </CardHeader>
-            <CollapsibleContent>
-              <CardContent>
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="font-semibold mb-2">1.1 Objetivo Principal</h3>
-                    <textarea 
-                      className="w-full p-2 border rounded-md" 
-                      rows={3}
-                      placeholder="Descreva o objetivo principal do projeto..."
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">1.2 Público-Alvo</h3>
-                    <textarea 
-                      className="w-full p-2 border rounded-md" 
-                      rows={3}
-                      placeholder="Defina o público-alvo do projeto..."
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">1.3 Valor Agregado</h3>
-                    <textarea 
-                      className="w-full p-2 border rounded-md" 
-                      rows={3}
-                      placeholder="Descreva o valor que o projeto entregará..."
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </CollapsibleContent>
-          </Card>
-        </Collapsible>
-
+        <VisionSection 
+          isOpen={openSections.overview} 
+          onToggle={() => toggleSection("overview")} 
+        />
+        
         {/* 2. Requisitos */}
         <Collapsible open={openSections.requirements}>
           <Card>
