@@ -9,6 +9,33 @@ interface OrganizationalSectionProps {
 }
 
 export const OrganizationalSection = ({ isOpen, onToggle }: OrganizationalSectionProps) => {
+  const organizationalChart = `
+    graph TD
+      subgraph Acessos["Níveis de Acesso"]
+        SA[Super Admin] --> Admin[Administradores]
+        Admin --> Mentor[Mentores]
+        Admin --> Pro[Profissionais]
+        Admin --> Client[Clientes]
+      end
+
+      subgraph Areas["Áreas Principais"]
+        Dashboard --> Marketplace
+        Dashboard --> Mentorias
+        Dashboard --> Financeiro
+        Dashboard --> Config[Configurações]
+      end
+
+      subgraph Funcionalidades["Funcionalidades Principais"]
+        Marketplace --> |"Inclui"| Servicos[Serviços]
+        Marketplace --> |"Inclui"| Chat[Chat]
+        Marketplace --> |"Inclui"| Pagamentos[Pagamentos]
+        Mentorias --> |"Inclui"| Agenda[Agendamento]
+        Mentorias --> |"Inclui"| Salas[Salas Virtuais]
+      end
+
+      SA --> Areas
+  `;
+
   return (
     <QuestionSection
       title="2. Estrutura Organizacional"
@@ -18,35 +45,8 @@ export const OrganizationalSection = ({ isOpen, onToggle }: OrganizationalSectio
       onToggle={onToggle}
     >
       <div className="space-y-6">
-        <div className="bg-white p-4 rounded-lg shadow-inner overflow-auto">
-          <pre className="mermaid text-sm">
-            {`
-graph TD
-    subgraph Acessos["Níveis de Acesso"]
-        SA[Super Admin] --> Admin[Administradores]
-        Admin --> Mentor[Mentores]
-        Admin --> Pro[Profissionais]
-        Admin --> Client[Clientes]
-    end
-
-    subgraph Areas["Áreas Principais"]
-        Dashboard --> Marketplace
-        Dashboard --> Mentorias
-        Dashboard --> Financeiro
-        Dashboard --> Config[Configurações]
-    end
-
-    subgraph Funcionalidades["Funcionalidades Principais"]
-        Marketplace --> |"Inclui"| Servicos[Serviços]
-        Marketplace --> |"Inclui"| Chat[Chat]
-        Marketplace --> |"Inclui"| Pagamentos[Pagamentos]
-        Mentorias --> |"Inclui"| Agenda[Agendamento]
-        Mentorias --> |"Inclui"| Salas[Salas Virtuais]
-    end
-
-    SA --> Areas
-            `}
-          </pre>
+        <div className="bg-white p-4 rounded-lg shadow-inner">
+          <Mermaid chart={organizationalChart} />
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">

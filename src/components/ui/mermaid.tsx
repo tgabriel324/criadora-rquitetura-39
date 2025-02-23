@@ -7,6 +7,12 @@ mermaid.initialize({
   theme: "default",
   securityLevel: "loose",
   fontFamily: "inherit",
+  htmlLabels: true,
+  flowchart: {
+    useMaxWidth: true,
+    htmlLabels: true,
+    curve: "basis",
+  },
 });
 
 interface MermaidProps {
@@ -17,17 +23,26 @@ const Mermaid: React.FC<MermaidProps> = ({ chart }) => {
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (elementRef.current) {
-      mermaid.render("mermaid-svg", chart).then(({ svg }) => {
-        if (elementRef.current) {
-          elementRef.current.innerHTML = svg;
+    const renderDiagram = async () => {
+      if (elementRef.current) {
+        elementRef.current.innerHTML = '';
+        const uniqueId = `mermaid-${Math.random().toString(36).substring(7)}`;
+        
+        try {
+          const { svg } = await mermaid.render(uniqueId, chart);
+          if (elementRef.current) {
+            elementRef.current.innerHTML = svg;
+          }
+        } catch (error) {
+          console.error("Mermaid rendering error:", error);
         }
-      });
-    }
+      }
+    };
+
+    renderDiagram();
   }, [chart]);
 
-  return <div className="mermaid-wrapper" ref={elementRef} />;
+  return <div className="mermaid-wrapper overflow-x-auto" ref={elementRef} />;
 };
 
 export default Mermaid;
-
