@@ -39,6 +39,11 @@ const Index = () => {
       title: "Projeto Bruno",
       description: "Dashboard e Funcionalidades",
       route: "/bruno"
+    },
+    {
+      title: "Hello Help",
+      description: "Sistema de Ajuda e Suporte",
+      route: "/hello-help"
     }
   ];
 
@@ -800,4 +805,3 @@ graph TD
 };
 
 export default Index;
-
