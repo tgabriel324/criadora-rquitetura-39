@@ -1,8 +1,8 @@
-<lov-code>
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
-import { Layers, Database, Server, Cog, List, Check, X, Folder, MessageCircleQuestion, AlertTriangle, Lightbulb, HelpCircle, InfoIcon } from "lucide-react";
+import { Layers, Database, Server, Cog, List, Check, X, Folder, MessageCircleQuestion } from "lucide-react";
 import { useState } from "react";
 import Mermaid from "@/components/ui/mermaid";
 
@@ -29,13 +29,11 @@ const Modelo1 = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
-      {/* Header */}
       <div className="max-w-5xl mx-auto mb-8 text-center">
         <h1 className="text-4xl font-bold text-primary mb-4">Modelo de Projeto</h1>
         <p className="text-xl text-gray-600">Estrutura Completa para Planejamento e Execução</p>
       </div>
 
-      {/* Main Content */}
       <div className="max-w-5xl mx-auto grid gap-6">
         {/* 1. Visão Geral */}
         <Collapsible open={openSections.overview}>
@@ -820,7 +818,7 @@ gantt
                           <input 
                             type="text" 
                             className="w-full p-2 border rounded-md" 
-                            defaultValue={pergunta}
+                            placeholder={pergunta}
                           />
                         </div>
                       ))}
@@ -844,7 +842,7 @@ gantt
                           <input 
                             type="text" 
                             className="w-full p-2 border rounded-md" 
-                            defaultValue={pergunta}
+                            placeholder={pergunta}
                           />
                         </div>
                       ))}
@@ -853,4 +851,34 @@ gantt
 
                   {/* Perfis de Usuário */}
                   <div>
-                    <h3 className="text-lg font-semibold mb
+                    <h3 className="text-lg font-semibold mb-3">3. Perfis de Usuário</h3>
+                    <div className="space-y-2 pl-4">
+                      {[
+                        "Quais são os diferentes tipos de usuário do sistema?",
+                        "Quais permissões cada perfil deve ter?",
+                        "Como cada perfil interage com o sistema?",
+                        "Quais são as principais ações de cada perfil?",
+                        "Quais métricas são importantes para cada perfil?"
+                      ].map((pergunta, index) => (
+                        <div key={index} className="flex items-start gap-2">
+                          <div className="min-w-4 mt-1">•</div>
+                          <input 
+                            type="text" 
+                            className="w-full p-2 border rounded-md" 
+                            placeholder={pergunta}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </CollapsibleContent>
+          </Card>
+        </Collapsible>
+      </div>
+    </div>
+  );
+};
+
+export default Modelo1;
