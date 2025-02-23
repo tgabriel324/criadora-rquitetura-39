@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -41,28 +42,38 @@ const HelloHelp = () => {
   };
 
   const handleDownloadPDF = () => {
-    const element = document.documentElement;
-    
-    const opt = {
-      margin: 1,
-      filename: 'hello-help-documento.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
+    // Primeiro, vamos abrir todas as seções
+    const allSectionsOpen = Object.keys(openSections).reduce((acc, key) => ({
+      ...acc,
+      [key]: true
+    }), {});
+    setOpenSections(allSectionsOpen);
 
-    html2pdf().set(opt).from(element).save();
+    // Aguarda um momento para as seções abrirem
+    setTimeout(() => {
+      const element = document.documentElement;
+      
+      const opt = {
+        margin: 1,
+        filename: 'hello-help-documento.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+
+      html2pdf().set(opt).from(element).save();
+    }, 500);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-light/10 to-secondary-light/10">
       <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
-        <div className="absolute top-4 right-4">
+        <div className="absolute top-4 right-4 no-print">
           <Button
             onClick={handleDownloadPDF}
             variant="outline"
             size="sm"
-            className="print:hidden hover:bg-primary hover:text-white transition-colors"
+            className="print:hidden hover:bg-primary hover:text-white transition-colors no-print"
           >
             <Download className="w-4 h-4 mr-2" />
             Download PDF
