@@ -1,3 +1,4 @@
+<lov-code>
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Button } from "@/components/ui/button";
@@ -852,4 +853,4 @@ gantt
 
                   {/* Perfis de Usuário */}
                   <div>
-                    <h3 className="text-lg font-semibold mb-3">
+                    <h3 className="text-lg font-semibold mb
