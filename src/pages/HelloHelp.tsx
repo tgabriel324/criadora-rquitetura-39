@@ -16,6 +16,7 @@ import { MonetizationSection } from "@/components/modelo/sections/MonetizationSe
 import { RoadmapSection } from "@/components/modelo/sections/RoadmapSection";
 import { RisksSection } from "@/components/modelo/sections/RisksSection";
 import { ChecklistSection } from "@/components/modelo/sections/ChecklistSection";
+import LayersSection from "@/components/modelo/sections/LayersSection";
 
 const HelloHelp = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
@@ -31,7 +32,8 @@ const HelloHelp = () => {
     monetization: false,
     roadmap: false,
     risks: false,
-    checklist: false
+    checklist: false,
+    layers: false
   });
 
   const toggleSection = (section: string) => {
@@ -104,6 +106,11 @@ const HelloHelp = () => {
             onToggle={() => toggleSection("vision")} 
           />
           
+          <LayersSection 
+            isOpen={openSections.layers} 
+            onToggle={() => toggleSection("layers")} 
+          />
+
           <OrganizationalSection 
             isOpen={openSections.organization} 
             onToggle={() => toggleSection("organization")} 
