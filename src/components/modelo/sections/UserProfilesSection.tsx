@@ -9,6 +9,21 @@ interface UserProfilesSectionProps {
 }
 
 export const UserProfilesSection = ({ isOpen, onToggle }: UserProfilesSectionProps) => {
+  const profiles = {
+    professional: {
+      characteristics: "Profissionais independentes buscando monetizar conhecimentos e habilidades",
+      needs: "Criar ofertas no marketplace, Participar de salas, Oferecer serviços, Negociar com clientes",
+    },
+    client: {
+      characteristics: "Pessoas e empresas buscando serviços profissionais",
+      needs: "Contratar serviços, Avaliar profissionais, Participar de salas, Buscar desenvolvimento profissional",
+    },
+    mentor: {
+      characteristics: "Especialistas e mentores com experiência comprovada",
+      needs: "Oferecer mentorias, Criar conteúdo, Acessar analytics, Criar salas temáticas",
+    }
+  };
+
   return (
     <QuestionSection
       title="5. Perfis de Usuário"
@@ -19,59 +34,56 @@ export const UserProfilesSection = ({ isOpen, onToggle }: UserProfilesSectionPro
     >
       <div className="space-y-8">
         <div className="grid md:grid-cols-3 gap-6">
-          {/* Perfil A */}
           <Card className="p-4">
-            <h4 className="font-medium mb-2">Perfil A</h4>
+            <h4 className="font-medium mb-2">Profissional</h4>
             <div className="space-y-2">
               <p className="text-sm text-gray-600">Características principais:</p>
               <textarea 
                 className="w-full p-2 border rounded-md text-sm" 
                 rows={3}
-                placeholder="Descreva as características do Perfil A..."
+                defaultValue={profiles.professional.characteristics}
               />
               <p className="text-sm text-gray-600">Necessidades principais:</p>
               <textarea 
                 className="w-full p-2 border rounded-md text-sm" 
                 rows={3}
-                placeholder="Liste as principais necessidades..."
+                defaultValue={profiles.professional.needs}
               />
             </div>
           </Card>
 
-          {/* Perfil B */}
           <Card className="p-4">
-            <h4 className="font-medium mb-2">Perfil B</h4>
+            <h4 className="font-medium mb-2">Cliente</h4>
             <div className="space-y-2">
               <p className="text-sm text-gray-600">Características principais:</p>
               <textarea 
                 className="w-full p-2 border rounded-md text-sm" 
                 rows={3}
-                placeholder="Descreva as características do Perfil B..."
+                defaultValue={profiles.client.characteristics}
               />
               <p className="text-sm text-gray-600">Necessidades principais:</p>
               <textarea 
                 className="w-full p-2 border rounded-md text-sm" 
                 rows={3}
-                placeholder="Liste as principais necessidades..."
+                defaultValue={profiles.client.needs}
               />
             </div>
           </Card>
 
-          {/* Admin */}
           <Card className="p-4">
-            <h4 className="font-medium mb-2">Administrador</h4>
+            <h4 className="font-medium mb-2">Mentor</h4>
             <div className="space-y-2">
               <p className="text-sm text-gray-600">Características principais:</p>
               <textarea 
                 className="w-full p-2 border rounded-md text-sm" 
                 rows={3}
-                placeholder="Descreva as características do Admin..."
+                defaultValue={profiles.mentor.characteristics}
               />
               <p className="text-sm text-gray-600">Necessidades principais:</p>
               <textarea 
                 className="w-full p-2 border rounded-md text-sm" 
                 rows={3}
-                placeholder="Liste as principais necessidades..."
+                defaultValue={profiles.mentor.needs}
               />
             </div>
           </Card>

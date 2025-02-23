@@ -8,6 +8,28 @@ interface RequirementsSectionProps {
 }
 
 export const RequirementsSection = ({ isOpen, onToggle }: RequirementsSectionProps) => {
+  const functionalRequirements = [
+    "Marketplace de serviços",
+    "Sistema de chat",
+    "Salas temáticas",
+    "Conexões automáticas",
+    "Sistema de pagamentos",
+    "Perfis profissionais",
+    "Sistema de matching de perfis",
+    "Sistema de avaliações",
+    "Sistema de mentorias"
+  ];
+
+  const nonFunctionalRequirements = [
+    "Autenticação segura",
+    "Proteção de dados",
+    "Segurança em transações",
+    "Carregamento rápido",
+    "Responsividade",
+    "Baixa latência em chats",
+    "Sistema escalável para 10k+ usuários"
+  ];
+
   return (
     <QuestionSection
       title="2. Requisitos do Sistema"
@@ -20,25 +42,27 @@ export const RequirementsSection = ({ isOpen, onToggle }: RequirementsSectionPro
         <div>
           <h3 className="font-semibold mb-3">2.1 Requisitos Funcionais</h3>
           <div className="space-y-2">
-            <div className="flex items-center gap-2">
+            {functionalRequirements.map((req, index) => (
               <input 
+                key={index}
                 type="text" 
                 className="w-full p-2 border rounded-md"
-                placeholder="Adicione um requisito funcional..."
+                defaultValue={req}
               />
-            </div>
+            ))}
           </div>
         </div>
         <div>
           <h3 className="font-semibold mb-3">2.2 Requisitos Não-Funcionais</h3>
           <div className="space-y-2">
-            <div className="flex items-center gap-2">
+            {nonFunctionalRequirements.map((req, index) => (
               <input 
+                key={index}
                 type="text" 
                 className="w-full p-2 border rounded-md"
-                placeholder="Adicione um requisito não-funcional..."
+                defaultValue={req}
               />
-            </div>
+            ))}
           </div>
         </div>
       </div>
