@@ -5,6 +5,7 @@ import { Layers, Database, Server, Cog, List, Check, X, Folder, MessageCircleQue
 import { useState } from "react";
 import Mermaid from "@/components/ui/mermaid";
 import { VisionSection } from "@/components/modelo/sections/VisionSection";
+import { RequirementsSection } from "@/components/modelo/sections/RequirementsSection";
 
 const Modelo1 = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
@@ -40,50 +41,10 @@ const Modelo1 = () => {
           onToggle={() => toggleSection("overview")} 
         />
         
-        {/* 2. Requisitos */}
-        <Collapsible open={openSections.requirements}>
-          <Card>
-            <CardHeader className="cursor-pointer" onClick={() => toggleSection("requirements")}>
-              <div className="flex items-center gap-2">
-                <List className="h-5 w-5" />
-                <CardTitle>2. Requisitos do Sistema</CardTitle>
-              </div>
-              <CardDescription>Funcionais e Não-Funcionais</CardDescription>
-            </CardHeader>
-            <CollapsibleContent>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h3 className="font-semibold mb-3">2.1 Requisitos Funcionais</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <Check className="h-4 w-4 text-green-500" />
-                        <input 
-                          type="text" 
-                          className="w-full p-2 border rounded-md"
-                          placeholder="Adicione um requisito funcional..."
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-3">2.2 Requisitos Não-Funcionais</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2">
-                        <Check className="h-4 w-4 text-blue-500" />
-                        <input 
-                          type="text" 
-                          className="w-full p-2 border rounded-md"
-                          placeholder="Adicione um requisito não-funcional..."
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </CollapsibleContent>
-          </Card>
-        </Collapsible>
+        <RequirementsSection 
+          isOpen={openSections.requirements} 
+          onToggle={() => toggleSection("requirements")} 
+        />
 
         {/* 3. Arquitetura */}
         <Collapsible open={openSections.architecture}>
@@ -501,7 +462,7 @@ graph TD
         Criacao --> Publicacao["Publicação"]
         Publicacao --> |"Gera"| Receita["Receita"]
         Receita --> |"Gera"| Metricas["Métricas"]
-        Metricas --> |"Influencia"| NovoConteudo["Novo Conteúdo"]
+        Metricas --> |"Influencia"| NovoConteudo["Novo Conteudo"]
     end
 
     %% Jornada Principal B
