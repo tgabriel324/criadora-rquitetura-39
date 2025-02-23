@@ -26,28 +26,31 @@ graph TD
         Marketing["Marketing Digital"] --> Landing
         Indicacao["Indicação"] --> Landing
         Landing --> Cadastro
-        Cadastro --> |"Perfil A"| OnboardingA["Onboarding A"]
-        Cadastro --> |"Perfil B"| OnboardingB["Onboarding B"]
-        OnboardingA --> ConfigInicial["Configuração Inicial"]
-        OnboardingB --> Descoberta["Descoberta"]
+        Cadastro --> |"Profissional"| OnboardingPro["Onboarding Pro"]
+        Cadastro --> |"Cliente"| OnboardingCliente["Onboarding Cliente"]
     end
 
-    %% Jornada Principal A
-    subgraph Perfil_A["Jornada Principal A"]
-        ConfigInicial --> Criacao["Criação"]
-        Criacao --> Publicacao["Publicação"]
-        Publicacao --> |"Gera"| Receita["Receita"]
+    %% Jornada do Profissional
+    subgraph Profissional["Jornada do Profissional"]
+        OnboardingPro --> CriarPerfil["Criar Perfil"]
+        CriarPerfil --> CriarServicos["Criar Serviços"]
+        CriarServicos --> |"Gera"| Receita["Receita"]
         Receita --> |"Gera"| Metricas["Métricas"]
-        Metricas --> |"Influencia"| NovoConteudo["Novo Conteudo"]
     end
 
-    %% Jornada Principal B
-    subgraph Perfil_B["Jornada Principal B"]
-        Descoberta --> Consumo["Consumo"]
-        Consumo --> Biblioteca["Biblioteca"]
-        Biblioteca --> Interacao["Interação"]
-        Interacao --> |"Gera"| Compartilhamento["Compartilhamento"]
-        Compartilhamento --> |"Influencia"| Descoberta
+    %% Jornada do Cliente
+    subgraph Cliente["Jornada do Cliente"]
+        OnboardingCliente --> Descoberta["Descoberta"]
+        Descoberta --> Contratacao["Contratação"]
+        Contratacao --> Pagamento["Pagamento"]
+        Pagamento --> Avaliacao["Avaliação"]
+    end
+
+    %% Fluxo de Mentoria
+    subgraph Mentoria["Fluxo de Mentoria"]
+        CriarPerfil --> |"Mentor"| DefinirEspecialidade["Definir Especialidade"]
+        DefinirEspecialidade --> CriarAgenda["Criar Agenda"]
+        CriarAgenda --> DisponibilizarHorarios["Disponibilizar Horários"]
     end
           `}
         </pre>
