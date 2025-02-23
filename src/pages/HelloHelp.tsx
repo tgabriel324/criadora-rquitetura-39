@@ -36,9 +36,9 @@ const HelloHelp = () => {
         <div className="text-center mb-12">
           <div className="mb-4">
             <img
-              src="/logo-hello-help.png"
+              src="/lovable-uploads/26a15c94-e0ca-4f07-97ee-49918e50ac8d.png"
               alt="Hello Help Logo"
-              className="h-20 mx-auto"
+              className="h-16 mx-auto"
             />
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
