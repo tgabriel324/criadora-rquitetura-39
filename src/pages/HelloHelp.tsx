@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import { VisionSection } from "@/components/modelo/sections/VisionSection";
+import { OrganizationalSection } from "@/components/modelo/sections/OrganizationalSection";
+import { SystemAreasSection } from "@/components/modelo/sections/SystemAreasSection";
 import { RequirementsSection } from "@/components/modelo/sections/RequirementsSection";
 import { ArchitectureSection } from "@/components/modelo/sections/ArchitectureSection";
 import { DatabaseSection } from "@/components/modelo/sections/DatabaseSection";
@@ -12,7 +14,9 @@ import { RisksSection } from "@/components/modelo/sections/RisksSection";
 
 const HelloHelp = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
-    overview: true,
+    vision: true,
+    organization: false,
+    areas: false,
     requirements: false,
     architecture: false,
     database: false,
@@ -48,10 +52,20 @@ const HelloHelp = () => {
 
         <div className="space-y-6">
           <VisionSection 
-            isOpen={openSections.overview} 
-            onToggle={() => toggleSection("overview")} 
+            isOpen={openSections.vision} 
+            onToggle={() => toggleSection("vision")} 
           />
           
+          <OrganizationalSection 
+            isOpen={openSections.organization} 
+            onToggle={() => toggleSection("organization")} 
+          />
+
+          <SystemAreasSection 
+            isOpen={openSections.areas} 
+            onToggle={() => toggleSection("areas")} 
+          />
+
           <RequirementsSection 
             isOpen={openSections.requirements} 
             onToggle={() => toggleSection("requirements")} 
