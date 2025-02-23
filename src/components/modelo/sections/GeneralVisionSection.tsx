@@ -9,166 +9,223 @@ interface GeneralVisionSectionProps {
 }
 
 export const GeneralVisionSection = ({ isOpen, onToggle }: GeneralVisionSectionProps) => {
-  const generalFlowChart = `
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#006D77', 'secondaryColor': '#83c5be', 'tertiaryColor': '#FF8533', 'primaryTextColor': '#221F26' }}}%%
-
-graph TD
-    %% Administração e Gestão
-    subgraph Admin["Administração da Plataforma"]
-        style Admin fill:#006D77,color:#fff
-        GestaoPlataforma["Gestão da Plataforma"] --> |"Gerencia"| Metricas["Métricas e KPIs"]
-        GestaoPlataforma --> |"Define"| Politicas["Políticas e Regras"]
-        GestaoPlataforma --> |"Monitora"| Qualidade["Qualidade do Serviço"]
-        Metricas --> |"Gera"| Relatorios["Relatórios"]
-        Politicas --> |"Define"| Comissoes["Comissões"]
-    end
-
-    %% Profissionais e Serviços
-    subgraph Pros["Profissionais e Mentores"]
-        style Pros fill:#83c5be,color:#221F26
-        CadastroPro["Cadastro Profissional"] --> |"Cria"| PerfilPro["Perfil Profissional"]
-        PerfilPro --> |"Oferece"| Servicos["Serviços"]
-        PerfilPro --> |"Oferece"| Mentorias["Mentorias"]
-        Servicos --> |"Gera"| Receitas["Receitas"]
-        Mentorias --> |"Gera"| ReceitasMentoria["Receitas Mentoria"]
-    end
-
-    %% Marketing e Aquisição
-    subgraph Marketing["Marketing e Aquisição"]
-        style Marketing fill:#FF8533,color:#221F26
-        Marketing_Digital["Marketing Digital"] --> |"Gera"| Leads["Leads"]
-        Leads --> |"Converte"| Usuarios["Usuários"]
-        Marketing_Digital --> |"Gera"| Trafego["Tráfego"]
-        Trafego --> |"Gera"| Conversoes["Conversões"]
-    end
-
-    %% Clientes e Experiência
-    subgraph Clientes["Clientes e Experiência"]
-        style Clientes fill:#83c5be,color:#221F26
-        CadastroCliente["Cadastro Cliente"] --> |"Busca"| Solucoes["Soluções"]
-        Solucoes --> |"Realiza"| Contratacao["Contratação"]
-        Contratacao --> |"Gera"| Pagamento["Pagamento"]
-        Pagamento --> |"Permite"| Avaliacao["Avaliação"]
-    end
-
-    %% Suporte e Qualidade
-    subgraph Suporte["Suporte e Qualidade"]
-        style Suporte fill:#006D77,color:#fff
-        AtendimentoCliente["Atendimento"] --> |"Resolve"| Tickets["Tickets"]
-        Tickets --> |"Gera"| Feedbacks["Feedbacks"]
-        Feedbacks --> |"Melhora"| Qualidade
-    end
-
-    %% Conexões entre subgrafos
-    Marketing --> Pros
-    Marketing --> Clientes
-    Pros --> Clientes
-    Clientes --> Suporte
-    Suporte --> Admin
-`;
-
-  const generalArchitectureChart = `
+  const ecosystemChart = `
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#006D77', 'secondaryColor': '#83c5be', 'tertiaryColor': '#FF8533', 'primaryTextColor': '#221F26' }}}%%
 
 graph TB
-    %% Frontend Layer
-    subgraph Frontend["Camada de Frontend"]
-        style Frontend fill:#83c5be,color:#221F26
-        WebApp["Web App (React)"]
-        MobileApp["Mobile App (PWA)"]
-        AdminPanel["Painel Admin"]
+    subgraph Marketplace["🛍️ Marketplace"]
+        style Marketplace fill:#006D77,color:#fff
+        Services[/"Serviços Profissionais"/]
+        Mentoring[/"Mentorias"/]
+        Knowledge[/"Conhecimento"/]
     end
 
-    %% Application Layer
-    subgraph Application["Camada de Aplicação"]
-        style Application fill:#006D77,color:#fff
-        API["API Gateway"]
-        Auth["Autenticação"]
-        ServiceLogic["Lógica de Serviços"]
-        MentorshipLogic["Lógica de Mentorias"]
-        PaymentLogic["Lógica de Pagamentos"]
-        NotificationSystem["Sistema de Notificações"]
+    subgraph ValueProposition["💎 Proposta de Valor"]
+        style ValueProposition fill:#83c5be,color:#221F26
+        Connection["Conexões Inteligentes"]
+        Monetization["Monetização de Conhecimento"]
+        Security["Ambiente Seguro"]
+        Integration["Integração Completa"]
     end
 
-    %% Services Layer
-    subgraph Services["Camada de Serviços"]
-        style Services fill:#FF8533,color:#221F26
-        ChatService["Serviço de Chat"]
-        VideoService["Serviço de Video"]
-        EmailService["Serviço de Email"]
-        PaymentProcessor["Processador de Pagamentos"]
-        StorageService["Serviço de Armazenamento"]
-        Analytics["Analytics"]
+    subgraph Stakeholders["👥 Stakeholders"]
+        style Stakeholders fill:#FF8533,color:#221F26
+        Professionals["Profissionais"]
+        Clients["Clientes"]
+        Mentors["Mentores"]
+        Partners["Parceiros"]
     end
 
-    %% Data Layer
-    subgraph Data["Camada de Dados"]
-        style Data fill:#83c5be,color:#221F26
-        MainDB["Banco Principal"]
-        CacheDB["Cache"]
-        MessageQueue["Fila de Mensagens"]
-        FileStorage["Armazenamento de Arquivos"]
+    subgraph Metrics["📊 KPIs"]
+        style Metrics fill:#006D77,color:#fff
+        Growth["Crescimento"]
+        Engagement["Engajamento"]
+        Revenue["Receita"]
+        Quality["Qualidade"]
     end
 
-    %% Security Layer
-    subgraph Security["Camada de Segurança"]
-        style Security fill:#006D77,color:#fff
-        Firewall["Firewall"]
-        WAF["Web Application Firewall"]
-        DDoS["Proteção DDoS"]
-        Encryption["Criptografia"]
-    end
+    Professionals --> Services
+    Mentors --> Mentoring
+    Services & Mentoring --> Knowledge
+    Knowledge --> Monetization
+    Monetization --> Revenue
+    Connection --> Engagement
+    Security & Integration --> Quality
+    Clients --> Growth
+    Partners --> Growth
+`;
 
-    %% Connections
-    Frontend --> Security
-    Security --> Application
-    Application --> Services
-    Services --> Data
-    Application --> Data
+  const journeyChart = `
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#006D77', 'secondaryColor': '#83c5be', 'tertiaryColor': '#FF8533', 'primaryTextColor': '#221F26' }}}%%
+
+journey
+    title Jornadas Principais do Usuário
+    section Profissional
+        Cadastro: 5: Dados
+        Perfil: 3: Bio, Skills
+        Serviços: 4: Criar
+        Mentoria: 4: Configurar
+        Analytics: 3: Métricas
+    section Cliente
+        Registro: 5: Conta
+        Busca: 4: Filtros
+        Contratação: 5: Pagamento
+        Avaliação: 3: Review
+    section Mentoria
+        Agendamento: 5: Data
+        Preparação: 4: Material
+        Sessão: 5: Virtual
+        Certificado: 4: Emissão
 `;
 
   return (
     <QuestionSection
-      title="1. Visão Geral do Sistema"
-      description="Fluxo geral e arquitetura completa"
+      title="Visão Geral do Projeto"
+      description="Visão estratégica e sistêmica do Hello Help"
       icon={Eye}
       isOpen={isOpen}
       onToggle={onToggle}
     >
       <div className="space-y-8">
-        <div>
-          <h3 className="font-semibold mb-4">1.1 Fluxo Geral do Negócio</h3>
-          <div className="bg-white p-4 rounded-lg shadow-inner">
-            <Mermaid chart={generalFlowChart} />
-          </div>
-        </div>
-
-        <div>
-          <h3 className="font-semibold mb-4">1.2 Arquitetura Geral do Sistema</h3>
-          <div className="bg-white p-4 rounded-lg shadow-inner">
-            <Mermaid chart={generalArchitectureChart} />
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <h3 className="font-semibold mb-3">Principais Stakeholders</h3>
-            <div className="space-y-2 text-sm text-gray-600">
-              <p className="p-2 bg-white rounded border">Administração da Plataforma</p>
-              <p className="p-2 bg-white rounded border">Profissionais e Mentores</p>
-              <p className="p-2 bg-white rounded border">Clientes</p>
-              <p className="p-2 bg-white rounded border">Equipe de Marketing</p>
-              <p className="p-2 bg-white rounded border">Suporte e Atendimento</p>
+        {/* Proposta de Valor e Diferenciação */}
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h3 className="text-lg font-semibold text-primary mb-4">💎 Proposta de Valor</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-medium mb-2">Diferenciais Competitivos</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span>Matching inteligente entre oferta e demanda</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span>Ambiente integrado de networking e negócios</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span>Sistema de mentorias com certificação</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <span>Garantia de pagamento e qualidade</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-medium mb-2">Posicionamento</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                  <span>Marketplace premium de conhecimento</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                  <span>Hub de desenvolvimento profissional</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                  <span>Rede de networking qualificada</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                  <span>Plataforma de monetização de expertise</span>
+                </li>
+              </ul>
             </div>
           </div>
-          <div>
-            <h3 className="font-semibold mb-3">Componentes Principais</h3>
-            <div className="space-y-2 text-sm text-gray-600">
-              <p className="p-2 bg-white rounded border">Frontend e Apps</p>
-              <p className="p-2 bg-white rounded border">APIs e Serviços</p>
-              <p className="p-2 bg-white rounded border">Banco de Dados</p>
-              <p className="p-2 bg-white rounded border">Serviços de Terceiros</p>
-              <p className="p-2 bg-white rounded border">Camada de Segurança</p>
+        </div>
+
+        {/* Ecossistema */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-primary">🌐 Ecossistema Hello Help</h3>
+          <div className="bg-white p-4 rounded-lg shadow-inner">
+            <Mermaid chart={ecosystemChart} />
+          </div>
+        </div>
+
+        {/* Jornadas do Usuário */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold text-primary">🚀 Jornadas do Usuário</h3>
+          <div className="bg-white p-4 rounded-lg shadow-inner">
+            <Mermaid chart={journeyChart} />
+          </div>
+        </div>
+
+        {/* Métricas e KPIs */}
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h3 className="text-lg font-semibold text-primary mb-4">📊 Métricas Principais</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="p-4 bg-primary/5 rounded-lg">
+              <h4 className="font-medium mb-2 text-primary">Crescimento</h4>
+              <ul className="text-sm space-y-1">
+                <li>• Novos usuários</li>
+                <li>• Taxa de retenção</li>
+                <li>• Expansão de mercado</li>
+              </ul>
+            </div>
+            <div className="p-4 bg-primary/5 rounded-lg">
+              <h4 className="font-medium mb-2 text-primary">Engajamento</h4>
+              <ul className="text-sm space-y-1">
+                <li>• Sessões por usuário</li>
+                <li>• Tempo na plataforma</li>
+                <li>• Taxa de conversão</li>
+              </ul>
+            </div>
+            <div className="p-4 bg-primary/5 rounded-lg">
+              <h4 className="font-medium mb-2 text-primary">Monetização</h4>
+              <ul className="text-sm space-y-1">
+                <li>• GMV total</li>
+                <li>• Ticket médio</li>
+                <li>• Receita por usuário</li>
+              </ul>
+            </div>
+            <div className="p-4 bg-primary/5 rounded-lg">
+              <h4 className="font-medium mb-2 text-primary">Qualidade</h4>
+              <ul className="text-sm space-y-1">
+                <li>• NPS</li>
+                <li>• Taxa de sucesso</li>
+                <li>• Avaliações positivas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Arquitetura de Alto Nível */}
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h3 className="text-lg font-semibold text-primary mb-4">🏗️ Arquitetura de Alto Nível</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="space-y-2">
+              <h4 className="font-medium text-primary">Frontend</h4>
+              <ul className="text-sm space-y-1 bg-gray-50 p-3 rounded">
+                <li>• Web App React</li>
+                <li>• Mobile PWA</li>
+                <li>• Design System</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h4 className="font-medium text-primary">Backend</h4>
+              <ul className="text-sm space-y-1 bg-gray-50 p-3 rounded">
+                <li>• API RESTful</li>
+                <li>• WebSocket</li>
+                <li>• Microserviços</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h4 className="font-medium text-primary">Infraestrutura</h4>
+              <ul className="text-sm space-y-1 bg-gray-50 p-3 rounded">
+                <li>• Cloud Native</li>
+                <li>• Containers</li>
+                <li>• CDN Global</li>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h4 className="font-medium text-primary">Integrações</h4>
+              <ul className="text-sm space-y-1 bg-gray-50 p-3 rounded">
+                <li>• Pagamentos</li>
+                <li>• Analytics</li>
+                <li>• Storage</li>
+              </ul>
             </div>
           </div>
         </div>
