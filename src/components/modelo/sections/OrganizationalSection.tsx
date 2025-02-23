@@ -10,30 +10,35 @@ interface OrganizationalSectionProps {
 
 export const OrganizationalSection = ({ isOpen, onToggle }: OrganizationalSectionProps) => {
   const organizationalChart = `
-    graph TD
-      subgraph Acessos["Níveis de Acesso"]
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#006D77', 'secondaryColor': '#83c5be', 'tertiaryColor': '#FF8533', 'primaryTextColor': '#221F26' }}}%%
+
+graph TD
+    subgraph Acessos["Níveis de Acesso"]
+        style Acessos fill:#83c5be,color:#221F26
         SA[Super Admin] --> Admin[Administradores]
         Admin --> Mentor[Mentores]
         Admin --> Pro[Profissionais]
         Admin --> Client[Clientes]
-      end
+    end
 
-      subgraph Areas["Áreas Principais"]
+    subgraph Areas["Áreas Principais"]
+        style Areas fill:#006D77,color:#fff
         Dashboard --> Marketplace
         Dashboard --> Mentorias
         Dashboard --> Financeiro
         Dashboard --> Config[Configurações]
-      end
+    end
 
-      subgraph Funcionalidades["Funcionalidades Principais"]
+    subgraph Funcionalidades["Funcionalidades Principais"]
+        style Funcionalidades fill:#FF8533,color:#221F26
         Marketplace --> |"Inclui"| Servicos[Serviços]
         Marketplace --> |"Inclui"| Chat[Chat]
         Marketplace --> |"Inclui"| Pagamentos[Pagamentos]
         Mentorias --> |"Inclui"| Agenda[Agendamento]
         Mentorias --> |"Inclui"| Salas[Salas Virtuais]
-      end
+    end
 
-      SA --> Areas
+    SA --> Areas
   `;
 
   return (

@@ -1,4 +1,3 @@
-
 import { Database } from "lucide-react";
 import { QuestionSection } from "../QuestionSection";
 import Mermaid from "@/components/ui/mermaid";
@@ -10,7 +9,10 @@ interface DatabaseSectionProps {
 
 export const DatabaseSection = ({ isOpen, onToggle }: DatabaseSectionProps) => {
   const databaseChart = `
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#006D77', 'secondaryColor': '#83c5be', 'tertiaryColor': '#FF8533', 'primaryTextColor': '#221F26' }}}%%
+
 erDiagram
+    %% Entidades principais com cores personalizadas
     USUARIO {
         string id
         string nome
