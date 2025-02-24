@@ -1,39 +1,31 @@
 
 import { useState } from "react";
-import { Download, BookOpen, Users, GitBranch, Database, Server, DollarSign, ListChecks, Grid, Layout, Eye, List } from "lucide-react";
+import { BookOpen, Layout, Users, GitBranch, Database, Server, DollarSign, Crown, BookMarked, BookText, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import html2pdf from "html2pdf.js";
-import { VisionSection } from "@/components/modelo/sections/VisionSection";
-import { GeneralVisionSection } from "@/components/modelo/sections/GeneralVisionSection";
-import { OrganizationalSection } from "@/components/modelo/sections/OrganizationalSection";
-import { SystemAreasSection } from "@/components/modelo/sections/SystemAreasSection";
-import { RequirementsSection } from "@/components/modelo/sections/RequirementsSection";
-import { ArchitectureSection } from "@/components/modelo/sections/ArchitectureSection";
-import { DatabaseSection } from "@/components/modelo/sections/DatabaseSection";
-import { UserProfilesSection } from "@/components/modelo/sections/UserProfilesSection";
-import { FlowsSection } from "@/components/modelo/sections/FlowsSection";
-import { MonetizationSection } from "@/components/modelo/sections/MonetizationSection";
-import { RoadmapSection } from "@/components/modelo/sections/RoadmapSection";
-import { RisksSection } from "@/components/modelo/sections/RisksSection";
-import { ChecklistSection } from "@/components/modelo/sections/ChecklistSection";
-import LayersSection from "@/components/modelo/sections/LayersSection";
+import { NovelaPlatformVision } from "@/components/novela/sections/NovelaPlatformVision";
+import { NovelaPlatformStructure } from "@/components/novela/sections/NovelaPlatformStructure";
+import { NovelaPlatformFeatures } from "@/components/novela/sections/NovelaPlatformFeatures";
+import { NovelaTechnicalStack } from "@/components/novela/sections/NovelaTechnicalStack";
+import { NovelaDatabaseModel } from "@/components/novela/sections/NovelaDatabaseModel";
+import { NovelaPremiumSystem } from "@/components/novela/sections/NovelaPremiumSystem";
+import { NovelaSocialFeatures } from "@/components/novela/sections/NovelaSocialFeatures";
+import { NovelaImplementation } from "@/components/novela/sections/NovelaImplementation";
+import { NovelaSecuritySection } from "@/components/novela/sections/NovelaSecuritySection";
+import { NovelaMobileSection } from "@/components/novela/sections/NovelaMobileSection";
 
 const NovelaBook = () => {
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
-    generalVision: true,
-    vision: false,
-    organization: false,
-    areas: false,
-    requirements: false,
-    architecture: false,
+    platformVision: true,
+    platformStructure: false,
+    features: false,
+    technical: false,
     database: false,
-    userProfiles: false,
-    flows: false,
-    monetization: false,
-    roadmap: false,
-    risks: false,
-    checklist: false,
-    layers: false
+    premium: false,
+    social: false,
+    implementation: false,
+    security: false,
+    mobile: false
   });
 
   const toggleSection = (section: string) => {
@@ -55,7 +47,7 @@ const NovelaBook = () => {
       
       const opt = {
         margin: 1,
-        filename: 'novelabook-documento.pdf',
+        filename: 'novelabook-documentacao.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -73,89 +65,72 @@ const NovelaBook = () => {
             onClick={handleDownloadPDF}
             variant="outline"
             size="sm"
-            className="print:hidden hover:bg-[#9b87f5] hover:text-white transition-colors no-print"
+            className="print:hidden hover:bg-[#9b87f5] hover:text-white transition-colors no-print flex items-center gap-2"
           >
-            <Download className="w-4 h-4 mr-2" />
+            <Download className="h-4 w-4" />
             Download PDF
           </Button>
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-[#9b87f5] mb-4">NovelaBook</h1>
+          <div className="inline-flex items-center gap-2 mb-4">
+            <BookOpen className="h-8 w-8 text-[#F97316]" />
+            <h1 className="text-4xl font-bold text-[#9b87f5]">NovelaBook</h1>
+          </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Plataforma premium para leitura e gestão de novels
+            Plataforma premium para leitura e gestão de novels com experiência exclusiva
           </p>
         </div>
 
         <div className="space-y-6">
-          <GeneralVisionSection 
-            isOpen={openSections.generalVision} 
-            onToggle={() => toggleSection("generalVision")} 
+          <NovelaPlatformVision 
+            isOpen={openSections.platformVision} 
+            onToggle={() => toggleSection("platformVision")} 
           />
 
-          <VisionSection 
-            isOpen={openSections.vision} 
-            onToggle={() => toggleSection("vision")} 
-          />
-          
-          <LayersSection 
-            isOpen={openSections.layers} 
-            onToggle={() => toggleSection("layers")} 
+          <NovelaPlatformStructure 
+            isOpen={openSections.platformStructure} 
+            onToggle={() => toggleSection("platformStructure")} 
           />
 
-          <OrganizationalSection 
-            isOpen={openSections.organization} 
-            onToggle={() => toggleSection("organization")} 
+          <NovelaPlatformFeatures 
+            isOpen={openSections.features} 
+            onToggle={() => toggleSection("features")} 
           />
 
-          <SystemAreasSection 
-            isOpen={openSections.areas} 
-            onToggle={() => toggleSection("areas")} 
+          <NovelaTechnicalStack 
+            isOpen={openSections.technical} 
+            onToggle={() => toggleSection("technical")} 
           />
 
-          <RequirementsSection 
-            isOpen={openSections.requirements} 
-            onToggle={() => toggleSection("requirements")} 
-          />
-
-          <ArchitectureSection 
-            isOpen={openSections.architecture} 
-            onToggle={() => toggleSection("architecture")} 
-          />
-
-          <DatabaseSection 
+          <NovelaDatabaseModel 
             isOpen={openSections.database} 
             onToggle={() => toggleSection("database")} 
           />
 
-          <UserProfilesSection 
-            isOpen={openSections.userProfiles} 
-            onToggle={() => toggleSection("userProfiles")} 
+          <NovelaPremiumSystem 
+            isOpen={openSections.premium} 
+            onToggle={() => toggleSection("premium")} 
           />
 
-          <FlowsSection 
-            isOpen={openSections.flows} 
-            onToggle={() => toggleSection("flows")} 
+          <NovelaSocialFeatures 
+            isOpen={openSections.social} 
+            onToggle={() => toggleSection("social")} 
           />
 
-          <MonetizationSection
-            isOpen={openSections.monetization}
-            onToggle={() => toggleSection("monetization")}
+          <NovelaImplementation 
+            isOpen={openSections.implementation} 
+            onToggle={() => toggleSection("implementation")} 
           />
 
-          <RoadmapSection
-            isOpen={openSections.roadmap}
-            onToggle={() => toggleSection("roadmap")}
+          <NovelaSecuritySection 
+            isOpen={openSections.security} 
+            onToggle={() => toggleSection("security")} 
           />
 
-          <RisksSection
-            isOpen={openSections.risks}
-            onToggle={() => toggleSection("risks")}
-          />
-
-          <ChecklistSection
-            isOpen={openSections.checklist}
-            onToggle={() => toggleSection("checklist")}
+          <NovelaMobileSection 
+            isOpen={openSections.mobile} 
+            onToggle={() => toggleSection("mobile")} 
           />
         </div>
       </div>
