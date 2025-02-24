@@ -9,25 +9,27 @@ interface RequirementsSectionProps {
 
 export const RequirementsSection = ({ isOpen, onToggle }: RequirementsSectionProps) => {
   const functionalRequirements = [
-    "Marketplace de serviços",
-    "Sistema de chat",
-    "Salas temáticas",
-    "Conexões automáticas",
-    "Sistema de pagamentos",
-    "Perfis profissionais",
-    "Sistema de matching de perfis",
-    "Sistema de avaliações",
-    "Sistema de mentorias"
+    "Sistema de leitura personalizado",
+    "Gestão de novels e capítulos",
+    "Sistema de assinaturas premium",
+    "Interação social e comunidade",
+    "Sistema de badges e achievements",
+    "Interface administrativa completa",
+    "Sistema de notificações",
+    "Analytics e relatórios",
+    "Moderação de conteúdo"
   ];
 
   const nonFunctionalRequirements = [
-    "Autenticação segura",
-    "Proteção de dados",
-    "Segurança em transações",
-    "Carregamento rápido",
-    "Responsividade",
-    "Baixa latência em chats",
-    "Sistema escalável para 10k+ usuários"
+    "Performance otimizada",
+    "Design responsivo",
+    "Segurança de dados",
+    "Alta disponibilidade",
+    "Escalabilidade horizontal",
+    "Cache eficiente",
+    "SEO otimizado",
+    "Acessibilidade WCAG",
+    "Backup automático"
   ];
 
   return (

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Download } from "lucide-react";
+import { Download, BookOpen, Users, GitBranch, Database, Server, DollarSign, ListChecks, Grid, Layout, Eye, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import html2pdf from "html2pdf.js";
 import { VisionSection } from "@/components/modelo/sections/VisionSection";
@@ -66,14 +66,14 @@ const NovelaBook = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-light/10 to-secondary-light/10">
+    <div className="min-h-screen bg-gradient-to-br from-[#9b87f5]/10 to-[#D6BCFA]/10">
       <div className="max-w-5xl mx-auto py-8 px-4 sm:px-6 lg:px-8 relative">
         <div className="absolute top-4 right-4 no-print">
           <Button
             onClick={handleDownloadPDF}
             variant="outline"
             size="sm"
-            className="print:hidden hover:bg-primary hover:text-white transition-colors no-print"
+            className="print:hidden hover:bg-[#9b87f5] hover:text-white transition-colors no-print"
           >
             <Download className="w-4 h-4 mr-2" />
             Download PDF
@@ -81,9 +81,9 @@ const NovelaBook = () => {
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-primary mb-4">NovelaBook</h1>
+          <h1 className="text-4xl font-bold text-[#9b87f5] mb-4">NovelaBook</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Sua plataforma para criação e gestão de histórias
+            Plataforma premium para leitura e gestão de novels
           </p>
         </div>
 
