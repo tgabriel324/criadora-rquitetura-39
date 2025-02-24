@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { useState } from "react";
@@ -44,6 +43,11 @@ const Index = () => {
       title: "Hello Help",
       description: "Sistema de Ajuda e Suporte",
       route: "/hello-help"
+    },
+    {
+      title: "NovelaBook",
+      description: "Plataforma de Criação de Histórias",
+      route: "/novela-book"
     }
   ];
 
