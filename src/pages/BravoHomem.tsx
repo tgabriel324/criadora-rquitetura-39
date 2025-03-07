@@ -13,7 +13,6 @@ import {
   MessageSquare, 
   Pin, 
   Smartphone, 
-  Tablet, 
   Users 
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -58,9 +57,9 @@ const BravoHomem = () => {
           
           <TabsContent value="proposta" className="space-y-8">
             {/* Resumo do Projeto */}
-            <Card className="border-primary/10 shadow-sm bg-white">
+            <Card className="border-gray-200 shadow-sm bg-white">
               <CardHeader className="pb-4">
-                <CardTitle className="text-primary text-xl flex items-center gap-2">
+                <CardTitle className="text-blue-600 text-xl flex items-center gap-2">
                   <FileText className="h-5 w-5 text-blue-600" />
                   Resumo do Projeto
                 </CardTitle>
@@ -73,7 +72,7 @@ const BravoHomem = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-3">
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium">Landing page para captação de leads</p>
                         <p className="text-sm text-gray-600">Página otimizada para conversão com apresentação dos tratamentos disponíveis.</p>
@@ -81,7 +80,7 @@ const BravoHomem = () => {
                     </div>
                     
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium">Questionário de anamnese digital</p>
                         <p className="text-sm text-gray-600">Coleta de informações médicas relevantes para avaliação inicial do paciente.</p>
@@ -89,7 +88,7 @@ const BravoHomem = () => {
                     </div>
                     
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium">Área do paciente</p>
                         <p className="text-sm text-gray-600">Dashboard para acompanhamento do tratamento, histórico e recompra.</p>
@@ -99,7 +98,7 @@ const BravoHomem = () => {
                   
                   <div className="space-y-3">
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium">Área do médico</p>
                         <p className="text-sm text-gray-600">Visualização dos pacientes, análise de questionários e prescrição de tratamentos.</p>
@@ -107,7 +106,7 @@ const BravoHomem = () => {
                     </div>
                     
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium">Área administrativa</p>
                         <p className="text-sm text-gray-600">Gestão de usuários, produtos e pedidos, com métricas e relatórios.</p>
@@ -115,7 +114,7 @@ const BravoHomem = () => {
                     </div>
                     
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <p className="font-medium">Integração com WhatsApp</p>
                         <p className="text-sm text-gray-600">Comunicação direta entre médicos e pacientes via WhatsApp.</p>
@@ -127,16 +126,16 @@ const BravoHomem = () => {
             </Card>
             
             {/* Diferenciais */}
-            <Card className="border-primary/10 shadow-sm bg-white">
+            <Card className="border-gray-200 shadow-sm bg-white">
               <CardHeader className="pb-4">
-                <CardTitle className="text-primary text-xl flex items-center gap-2">
+                <CardTitle className="text-blue-600 text-xl flex items-center gap-2">
                   <Pin className="h-5 w-5 text-blue-600" />
                   Diferenciais da Solução
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <div className="flex items-center gap-2 mb-2">
                       <Smartphone className="h-5 w-5 text-blue-600" />
                       <h3 className="font-medium">Design Responsivo</h3>
@@ -146,7 +145,7 @@ const BravoHomem = () => {
                     </p>
                   </div>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <div className="flex items-center gap-2 mb-2">
                       <MessageSquare className="h-5 w-5 text-blue-600" />
                       <h3 className="font-medium">WhatsApp Nativo</h3>
@@ -156,7 +155,7 @@ const BravoHomem = () => {
                     </p>
                   </div>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <div className="flex items-center gap-2 mb-2">
                       <Users className="h-5 w-5 text-blue-600" />
                       <h3 className="font-medium">Experiência Simplificada</h3>
@@ -170,9 +169,9 @@ const BravoHomem = () => {
             </Card>
             
             {/* Fluxo do Sistema */}
-            <Card className="border-primary/10 shadow-sm bg-white">
+            <Card className="border-gray-200 shadow-sm bg-white">
               <CardHeader className="pb-4">
-                <CardTitle className="text-primary text-xl flex items-center gap-2">
+                <CardTitle className="text-blue-600 text-xl flex items-center gap-2">
                   <Cpu className="h-5 w-5 text-blue-600" />
                   Fluxo Principal do Sistema
                 </CardTitle>
@@ -209,126 +208,13 @@ graph TD
                 </div>
               </CardContent>
             </Card>
-            
-            {/* Mockup da Interface */}
-            <Card className="border-primary/10 shadow-sm bg-white">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-primary text-xl flex items-center gap-2">
-                  <Tablet className="h-5 w-5 text-blue-600" />
-                  Preview das Interfaces
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="space-y-3">
-                    <h3 className="font-medium text-lg">Questionário de Anamnese</h3>
-                    <div className="border rounded-md p-4 bg-white shadow-sm">
-                      <div className="space-y-4">
-                        <div>
-                          <h4 className="font-medium mb-2">Questionário de Saúde</h4>
-                          <div className="space-y-3">
-                            <div className="space-y-1">
-                              <label className="text-sm font-medium">Você tem algum problema de saúde diagnosticado?</label>
-                              <div className="flex gap-4">
-                                <div className="flex items-center gap-2">
-                                  <input type="radio" name="health" className="text-blue-600" />
-                                  <span className="text-sm">Sim</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                  <input type="radio" name="health" className="text-blue-600" defaultChecked />
-                                  <span className="text-sm">Não</span>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            <div className="space-y-1">
-                              <label className="text-sm font-medium">Toma alguma medicação regularmente?</label>
-                              <div className="flex gap-4">
-                                <div className="flex items-center gap-2">
-                                  <input type="radio" name="medication" className="text-blue-600" />
-                                  <span className="text-sm">Sim</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                  <input type="radio" name="medication" className="text-blue-600" defaultChecked />
-                                  <span className="text-sm">Não</span>
-                                </div>
-                              </div>
-                            </div>
-                            
-                            <div className="space-y-1">
-                              <label className="text-sm font-medium">Há quanto tempo percebe os sintomas?</label>
-                              <select className="w-full p-2 border rounded-md text-sm">
-                                <option>Menos de 1 mês</option>
-                                <option>1-3 meses</option>
-                                <option>3-6 meses</option>
-                                <option>Mais de 6 meses</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        <div className="flex justify-end">
-                          <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium">
-                            Próxima Etapa
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-3">
-                    <h3 className="font-medium text-lg">Dashboard do Médico</h3>
-                    <div className="border rounded-md p-4 bg-white shadow-sm">
-                      <div className="space-y-4">
-                        <div className="flex justify-between items-center">
-                          <h4 className="font-medium">Pacientes Recentes</h4>
-                          <button className="text-blue-600 text-sm">Ver todos</button>
-                        </div>
-                        
-                        <div className="space-y-2">
-                          <div className="p-3 border rounded-md flex justify-between items-center hover:bg-gray-50">
-                            <div>
-                              <p className="font-medium">Carlos Silva</p>
-                              <p className="text-sm text-gray-600">Disfunção Erétil - Questionário completo</p>
-                            </div>
-                            <button className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium">
-                              Analisar
-                            </button>
-                          </div>
-                          
-                          <div className="p-3 border rounded-md flex justify-between items-center hover:bg-gray-50">
-                            <div>
-                              <p className="font-medium">André Santos</p>
-                              <p className="text-sm text-gray-600">Queda Capilar - Aguardando prescrição</p>
-                            </div>
-                            <button className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">
-                              Prescrever
-                            </button>
-                          </div>
-                          
-                          <div className="p-3 border rounded-md flex justify-between items-center hover:bg-gray-50">
-                            <div>
-                              <p className="font-medium">Marcelo Costa</p>
-                              <p className="text-sm text-gray-600">Disfunção Erétil - Em tratamento</p>
-                            </div>
-                            <button className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">
-                              Acompanhar
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </TabsContent>
           
           <TabsContent value="escopo" className="space-y-8">
             {/* Escopo Técnico */}
-            <Card className="border-primary/10 shadow-sm bg-white">
+            <Card className="border-gray-200 shadow-sm bg-white">
               <CardHeader className="pb-4">
-                <CardTitle className="text-primary text-xl flex items-center gap-2">
+                <CardTitle className="text-blue-600 text-xl flex items-center gap-2">
                   <Code className="h-5 w-5 text-blue-600" />
                   Implementação Técnica
                 </CardTitle>
@@ -339,7 +225,7 @@ graph TD
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-3">
-                      <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                      <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                         <h4 className="font-medium mb-2">Frontend</h4>
                         <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
                           <li>React + TypeScript</li>
@@ -350,7 +236,7 @@ graph TD
                         </ul>
                       </div>
                       
-                      <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                      <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                         <h4 className="font-medium mb-2">Design & UX</h4>
                         <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
                           <li>Interface minimalista e intuitiva</li>
@@ -363,7 +249,7 @@ graph TD
                     </div>
                     
                     <div className="space-y-3">
-                      <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                      <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                         <h4 className="font-medium mb-2">Backend</h4>
                         <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
                           <li>API RESTful</li>
@@ -374,7 +260,7 @@ graph TD
                         </ul>
                       </div>
                       
-                      <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                      <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                         <h4 className="font-medium mb-2">Segurança</h4>
                         <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
                           <li>Criptografia de dados sensíveis</li>
@@ -421,7 +307,7 @@ flowchart TD
                   <h3 className="font-medium text-lg">Módulos do Sistema</h3>
                   
                   <div className="space-y-3">
-                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <h4 className="font-medium mb-2">Módulo de Captação de Leads</h4>
                       <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
                         <li>Landing page otimizada</li>
@@ -431,7 +317,7 @@ flowchart TD
                       </ul>
                     </div>
                     
-                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <h4 className="font-medium mb-2">Módulo de Pacientes</h4>
                       <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
                         <li>Cadastro e autenticação</li>
@@ -442,7 +328,7 @@ flowchart TD
                       </ul>
                     </div>
                     
-                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <h4 className="font-medium mb-2">Módulo Médico</h4>
                       <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
                         <li>Lista de pacientes</li>
@@ -453,7 +339,7 @@ flowchart TD
                       </ul>
                     </div>
                     
-                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <h4 className="font-medium mb-2">Módulo Administrativo</h4>
                       <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
                         <li>Gestão de usuários</li>
@@ -471,9 +357,9 @@ flowchart TD
           
           <TabsContent value="cronograma" className="space-y-8">
             {/* Cronograma */}
-            <Card className="border-primary/10 shadow-sm bg-white">
+            <Card className="border-gray-200 shadow-sm bg-white">
               <CardHeader className="pb-4">
-                <CardTitle className="text-primary text-xl flex items-center gap-2">
+                <CardTitle className="text-blue-600 text-xl flex items-center gap-2">
                   <Calendar className="h-5 w-5 text-blue-600" />
                   Cronograma de Desenvolvimento
                 </CardTitle>
@@ -509,7 +395,7 @@ gantt
                   <h3 className="font-medium text-lg">Fases do Projeto</h3>
                   
                   <div className="space-y-4">
-                    <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <div className="flex items-center gap-2 mb-2">
                         <Clock className="h-5 w-5 text-blue-600" />
                         <h4 className="font-medium">Fase 1: Desenvolvimento Frontend - 20 dias</h4>
@@ -544,9 +430,9 @@ gantt
                       </div>
                     </div>
                     
-                    <div className="bg-green-50 p-4 rounded-lg border border-green-100">
+                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                       <div className="flex items-center gap-2 mb-2">
-                        <Clock className="h-5 w-5 text-green-600" />
+                        <Clock className="h-5 w-5 text-blue-600" />
                         <h4 className="font-medium">Fase 2: Desenvolvimento Backend - 10 dias</h4>
                       </div>
                       
@@ -584,7 +470,7 @@ gantt
                   
                   <div className="flex justify-center items-center gap-8 mt-6">
                     <div className="text-center">
-                      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mx-auto mb-2">
+                      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mx-auto mb-2">
                         <Calendar className="h-8 w-8 text-blue-600" />
                       </div>
                       <p className="font-medium">Início do Projeto</p>
@@ -594,7 +480,7 @@ gantt
                     <div className="h-0.5 w-20 bg-gray-300"></div>
                     
                     <div className="text-center">
-                      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mx-auto mb-2">
+                      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mx-auto mb-2">
                         <Users className="h-8 w-8 text-blue-600" />
                       </div>
                       <p className="font-medium">Entrega Frontend</p>
@@ -604,8 +490,8 @@ gantt
                     <div className="h-0.5 w-20 bg-gray-300"></div>
                     
                     <div className="text-center">
-                      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mx-auto mb-2">
-                        <CheckCircle2 className="h-8 w-8 text-green-600" />
+                      <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mx-auto mb-2">
+                        <CheckCircle2 className="h-8 w-8 text-blue-600" />
                       </div>
                       <p className="font-medium">Entrega Final</p>
                       <p className="text-sm text-gray-600">Em 30 dias</p>
@@ -616,18 +502,18 @@ gantt
             </Card>
             
             {/* Marcos do Projeto */}
-            <Card className="border-primary/10 shadow-sm bg-white">
+            <Card className="border-gray-200 shadow-sm bg-white">
               <CardHeader className="pb-4">
-                <CardTitle className="text-primary text-xl flex items-center gap-2">
+                <CardTitle className="text-blue-600 text-xl flex items-center gap-2">
                   <Pin className="h-5 w-5 text-blue-600" />
                   Marcos do Projeto
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
                         <span className="text-blue-600 font-bold">1</span>
                       </div>
                       <div>
@@ -639,9 +525,9 @@ gantt
                     </div>
                   </div>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
                         <span className="text-blue-600 font-bold">2</span>
                       </div>
                       <div>
@@ -653,9 +539,9 @@ gantt
                     </div>
                   </div>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
                         <span className="text-blue-600 font-bold">3</span>
                       </div>
                       <div>
@@ -667,10 +553,10 @@ gantt
                     </div>
                   </div>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                        <span className="text-green-600 font-bold">4</span>
+                      <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                        <span className="text-blue-600 font-bold">4</span>
                       </div>
                       <div>
                         <h4 className="font-medium mb-1">Entrega Final</h4>
@@ -681,10 +567,10 @@ gantt
                     </div>
                   </div>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                        <span className="text-purple-600 font-bold">5</span>
+                      <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                        <span className="text-blue-600 font-bold">5</span>
                       </div>
                       <div>
                         <h4 className="font-medium mb-1">Suporte Pós-Entrega</h4>
@@ -701,9 +587,9 @@ gantt
           
           <TabsContent value="investimento" className="space-y-8">
             {/* Investimento */}
-            <Card className="border-primary/10 shadow-sm bg-white">
+            <Card className="border-gray-200 shadow-sm bg-white">
               <CardHeader className="pb-4">
-                <CardTitle className="text-primary text-xl flex items-center gap-2">
+                <CardTitle className="text-blue-600 text-xl flex items-center gap-2">
                   <DollarSign className="h-5 w-5 text-blue-600" />
                   Investimento
                 </CardTitle>
@@ -725,40 +611,40 @@ gantt
                     
                     <div className="space-y-3 mt-4">
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Landing page otimizada</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Questionário de anamnese</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Dashboard do paciente</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Dashboard do médico</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Área administrativa</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Design responsivo completo</p>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="border border-green-200 rounded-lg bg-green-50 p-6">
+                  <div className="border border-blue-200 rounded-lg bg-blue-50 p-6">
                     <div className="flex items-center gap-2 mb-2">
-                      <Cpu className="h-5 w-5 text-green-600" />
+                      <Cpu className="h-5 w-5 text-blue-600" />
                       <h3 className="font-medium text-lg">Fase 2: Backend</h3>
                     </div>
                     
                     <div className="mt-4 text-center">
-                      <p className="text-3xl font-bold text-green-600">R$ 1.500,00</p>
+                      <p className="text-3xl font-bold text-blue-600">R$ 1.500,00</p>
                       <p className="text-sm text-gray-600 mt-1">Prazo: 10 dias corridos</p>
                     </div>
                     
@@ -766,34 +652,34 @@ gantt
                     
                     <div className="space-y-3 mt-4">
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Banco de dados completo</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">APIs seguras</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Sistema de autenticação</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Integração com WhatsApp</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Implementação de regras de negócio</p>
                       </div>
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-4 w-4 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <p className="text-sm">Deploy em ambiente de produção</p>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="bg-gray-100 p-6 rounded-lg mt-6">
+                <div className="bg-gray-50 p-6 rounded-lg mt-6">
                   <div className="text-center mb-4">
                     <h3 className="text-xl font-bold">Valor Total do Projeto</h3>
                     <p className="text-4xl font-bold text-blue-600 mt-2">R$ 4.000,00</p>
@@ -806,7 +692,7 @@ gantt
                     
                     <div className="space-y-2">
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <div>
                           <p className="font-medium">Frontend (R$ 2.500,00)</p>
                           <p className="text-sm text-gray-600">50% na aprovação da proposta (R$ 1.250,00)</p>
@@ -815,7 +701,7 @@ gantt
                       </div>
                       
                       <div className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <div>
                           <p className="font-medium">Backend (R$ 1.500,00)</p>
                           <p className="text-sm text-gray-600">50% no início do desenvolvimento (R$ 750,00)</p>
@@ -843,9 +729,9 @@ gantt
             </Card>
             
             {/* Sobre a Ditho Soluções */}
-            <Card className="border-primary/10 shadow-sm bg-white">
+            <Card className="border-gray-200 shadow-sm bg-white">
               <CardHeader className="pb-4">
-                <CardTitle className="text-primary text-xl flex items-center gap-2">
+                <CardTitle className="text-blue-600 text-xl flex items-center gap-2">
                   <Users className="h-5 w-5 text-blue-600" />
                   Sobre a Ditho Soluções
                 </CardTitle>
@@ -856,7 +742,7 @@ gantt
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-6 mt-4">
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <h4 className="font-medium mb-2">Nossos Diferenciais</h4>
                     <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
                       <li>Especialização em sistemas de saúde</li>
@@ -867,7 +753,7 @@ gantt
                     </ul>
                   </div>
                   
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100">
+                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                     <h4 className="font-medium mb-2">Nossos Clientes Dizem</h4>
                     <div className="italic text-sm text-gray-600">
                       <p>"A Ditho entregou mais do que esperávamos no prazo combinado. O sistema transformou nossa operação e melhorou significativamente nossa taxa de conversão."</p>
