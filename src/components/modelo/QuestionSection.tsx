@@ -10,6 +10,7 @@ interface QuestionSectionProps {
   isOpen: boolean;
   onToggle: () => void;
   children: React.ReactNode;
+  className?: string;
 }
 
 export const QuestionSection = ({
@@ -18,10 +19,11 @@ export const QuestionSection = ({
   icon: Icon,
   isOpen,
   onToggle,
-  children
+  children,
+  className
 }: QuestionSectionProps) => {
   return (
-    <Collapsible open={isOpen} className="mb-6">
+    <Collapsible open={isOpen} className={`mb-6 ${className || ''}`}>
       <Card className="border-primary/10 hover:border-primary/20 transition-colors shadow-sm">
         <CardHeader 
           className="cursor-pointer hover:bg-primary/5 transition-colors rounded-t-lg flex flex-row items-center justify-between" 

@@ -9,6 +9,7 @@ interface QuestionInputProps {
   rows?: number;
   label?: string;
   onChange?: (value: string) => void;
+  className?: string;
 }
 
 export const QuestionInput = ({ 
@@ -18,7 +19,8 @@ export const QuestionInput = ({
   multiline = false, 
   rows = 5,
   label,
-  onChange
+  onChange,
+  className
 }: QuestionInputProps) => {
   const [value, setValue] = useState(defaultValue || "");
 
@@ -30,7 +32,7 @@ export const QuestionInput = ({
   };
 
   return (
-    <div className="space-y-2">
+    <div className={`space-y-2 ${className}`}>
       {label && <div className="text-lg font-semibold text-primary mb-1">{label}</div>}
       <div className="flex items-start gap-2">
         <div className="min-w-4 mt-1">•</div>
