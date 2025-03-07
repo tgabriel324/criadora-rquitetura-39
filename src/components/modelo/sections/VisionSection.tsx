@@ -124,30 +124,42 @@ export const VisionSection = ({ isOpen, onToggle }: VisionSectionProps) => {
       isOpen={isOpen}
       onToggle={onToggle}
     >
-      <div className="space-y-4">
+      <div className="space-y-6">
         <QuestionInput 
           question={questions.vision[0]} 
           defaultValue={answers.problem}
+          multiline
+          rows={4}
         />
         <QuestionInput 
           question={questions.vision[1]} 
           defaultValue={answers.stakeholders}
+          multiline
+          rows={8}
         />
         <QuestionInput 
           question={questions.vision[2]} 
           defaultValue={answers.objective}
+          multiline
+          rows={6}
         />
         <QuestionInput 
           question={questions.vision[3]} 
           defaultValue={answers.value}
+          multiline
+          rows={8}
         />
         <QuestionInput 
           question={questions.vision[4]} 
           defaultValue={answers.metrics}
+          multiline
+          rows={8}
         />
         <QuestionInput 
           question={questions.vision[5]} 
           defaultValue={answers.architecture}
+          multiline
+          rows={8}
         />
       </div>
     </QuestionSection>

@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
-import { LucideIcon } from "lucide-react";
+import { ChevronDown, ChevronUp, LucideIcon } from "lucide-react";
 
 interface QuestionSectionProps {
   title: string;
@@ -21,20 +21,29 @@ export const QuestionSection = ({
   children
 }: QuestionSectionProps) => {
   return (
-    <Collapsible open={isOpen}>
-      <Card className="border-primary/10 hover:border-primary/20 transition-colors">
+    <Collapsible open={isOpen} className="mb-6">
+      <Card className="border-primary/10 hover:border-primary/20 transition-colors shadow-sm">
         <CardHeader 
-          className="cursor-pointer hover:bg-primary/5 transition-colors rounded-t-lg" 
+          className="cursor-pointer hover:bg-primary/5 transition-colors rounded-t-lg flex flex-row items-center justify-between" 
           onClick={onToggle}
         >
-          <div className="flex items-center gap-2">
-            <Icon className="h-5 w-5 text-primary" />
-            <CardTitle className="text-primary">{title}</CardTitle>
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2">
+              <Icon className="h-5 w-5 text-primary" />
+              <CardTitle className="text-primary">{title}</CardTitle>
+            </div>
+            <CardDescription>{description}</CardDescription>
           </div>
-          <CardDescription>{description}</CardDescription>
+          <div className="text-primary">
+            {isOpen ? (
+              <ChevronUp className="h-5 w-5" />
+            ) : (
+              <ChevronDown className="h-5 w-5" />
+            )}
+          </div>
         </CardHeader>
         <CollapsibleContent>
-          <CardContent>
+          <CardContent className="pt-2">
             {children}
           </CardContent>
         </CollapsibleContent>
