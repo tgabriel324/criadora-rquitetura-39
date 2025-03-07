@@ -28,7 +28,7 @@ const BravoHomem = () => {
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <img 
-              src="/lovable-uploads/2bc2a099-074a-498b-bc10-6c652c879a65.png" 
+              src="/lovable-uploads/2f38fdf8-644d-48f0-8516-33af8c68b399.png" 
               alt="Bravo Homem Logo" 
               className="h-16 w-auto object-contain" 
             />
@@ -120,49 +120,6 @@ const BravoHomem = () => {
                         <p className="text-sm text-gray-600">Comunicação direta entre médicos e pacientes via WhatsApp.</p>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            
-            {/* Diferenciais */}
-            <Card className="border-gray-200 shadow-sm bg-white">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-blue-600 text-xl flex items-center gap-2">
-                  <Pin className="h-5 w-5 text-blue-600" />
-                  Diferenciais da Solução
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Smartphone className="h-5 w-5 text-blue-600" />
-                      <h3 className="font-medium">Design Responsivo</h3>
-                    </div>
-                    <p className="text-sm text-gray-600">
-                      Interface otimizada para todos os dispositivos, garantindo experiência fluida em desktop, tablet e mobile.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <MessageSquare className="h-5 w-5 text-blue-600" />
-                      <h3 className="font-medium">WhatsApp Nativo</h3>
-                    </div>
-                    <p className="text-sm text-gray-600">
-                      Integração direta com WhatsApp para comunicação entre médicos e pacientes, sem necessidade de chat próprio.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Users className="h-5 w-5 text-blue-600" />
-                      <h3 className="font-medium">Experiência Simplificada</h3>
-                    </div>
-                    <p className="text-sm text-gray-600">
-                      Fluxo intuitivo que aumenta a taxa de conversão e melhora a experiência do usuário.
-                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -719,12 +676,6 @@ gantt
                     não previstas nesta proposta podem ser orçadas separadamente.
                   </p>
                 </div>
-                
-                <div className="flex justify-center mt-8">
-                  <button onClick={() => setActiveTab("proposta")} className="bg-blue-600 text-white px-8 py-3 rounded-md text-base font-medium hover:bg-blue-700 transition-colors">
-                    Voltar à Proposta
-                  </button>
-                </div>
               </CardContent>
             </Card>
             
@@ -738,43 +689,27 @@ gantt
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-700">
-                  A Ditho Soluções é especializada em desenvolvimento de sistemas web e mobile, com foco em soluções digitais inovadoras para o setor de saúde. Nossa equipe possui vasta experiência na criação de plataformas que otimizam processos e melhoram a experiência de médicos e pacientes.
+                  A Ditho Soluções é especializada em desenvolvimento de sistemas web, lojas virtuais, SaaS, aplicativos móveis e 
+                  automações. Nossa equipe trabalha com processos otimizados para entregar soluções digitais de alta qualidade 
+                  que atendem precisamente às necessidades de nossos clientes.
                 </p>
                 
-                <div className="grid md:grid-cols-2 gap-6 mt-4">
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                    <h4 className="font-medium mb-2">Nossos Diferenciais</h4>
-                    <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
-                      <li>Especialização em sistemas de saúde</li>
-                      <li>Equipe multidisciplinar e experiente</li>
-                      <li>Metodologia ágil e flexível</li>
-                      <li>Foco em resultados e conversão</li>
-                      <li>Suporte técnico de qualidade</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                    <h4 className="font-medium mb-2">Nossos Clientes Dizem</h4>
-                    <div className="italic text-sm text-gray-600">
-                      <p>"A Ditho entregou mais do que esperávamos no prazo combinado. O sistema transformou nossa operação e melhorou significativamente nossa taxa de conversão."</p>
-                      <p className="font-medium mt-2">— João Silva, MedTech Solutions</p>
-                    </div>
-                  </div>
+                <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mt-4">
+                  <h4 className="font-medium mb-2">Nossa Abordagem</h4>
+                  <ul className="list-disc pl-5 text-sm text-gray-600 space-y-1">
+                    <li>Processos de desenvolvimento ágeis e transparentes</li>
+                    <li>Comunicação clara e objetiva durante todo o projeto</li>
+                    <li>Foco em resultados mensuráveis para o seu negócio</li>
+                    <li>Flexibilidade para adaptar às necessidades específicas</li>
+                    <li>Acompanhamento contínuo do projeto com atualizações regulares</li>
+                  </ul>
                 </div>
                 
-                <div className="flex flex-col items-center mt-8">
-                  <p className="text-center text-gray-700 mb-4">
-                    Estamos prontos para transformar sua visão em realidade. Conte com nossa expertise para desenvolver a plataforma Bravo Homem com excelência e no prazo acordado.
+                <div className="text-center mt-6">
+                  <p className="text-gray-700">
+                    Estamos prontos para transformar a visão do Bravo Homem em realidade, entregando uma plataforma 
+                    de alta qualidade dentro do prazo e orçamento acordados.
                   </p>
-                  
-                  <div className="flex gap-4">
-                    <button className="bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
-                      Aceitar Proposta
-                    </button>
-                    <button className="border border-blue-600 text-blue-600 px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-50 transition-colors">
-                      Agendar Reunião
-                    </button>
-                  </div>
                 </div>
               </CardContent>
             </Card>
