@@ -1,6 +1,7 @@
 
 import { Smartphone } from "lucide-react";
 import { QuestionSection } from "../../modelo/QuestionSection";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface NovelaMobileSectionProps {
   isOpen: boolean;
@@ -8,6 +9,8 @@ interface NovelaMobileSectionProps {
 }
 
 export const NovelaMobileSection = ({ isOpen, onToggle }: NovelaMobileSectionProps) => {
+  const isMobile = useIsMobile();
+  
   const mobileContent = {
     pwa: `Progressive Web App:
 
@@ -115,7 +118,7 @@ export const NovelaMobileSection = ({ isOpen, onToggle }: NovelaMobileSectionPro
           <h3 className="text-lg font-semibold text-[#9b87f5] mb-2">Progressive Web App</h3>
           <textarea 
             className="w-full p-3 border rounded-md"
-            rows={10}
+            rows={isMobile ? 6 : 10}
             defaultValue={mobileContent.pwa}
           />
         </div>
@@ -124,7 +127,7 @@ export const NovelaMobileSection = ({ isOpen, onToggle }: NovelaMobileSectionPro
           <h3 className="text-lg font-semibold text-[#9b87f5] mb-2">Apps Nativos</h3>
           <textarea 
             className="w-full p-3 border rounded-md"
-            rows={10}
+            rows={isMobile ? 6 : 10}
             defaultValue={mobileContent.apps}
           />
         </div>
@@ -133,7 +136,7 @@ export const NovelaMobileSection = ({ isOpen, onToggle }: NovelaMobileSectionPro
           <h3 className="text-lg font-semibold text-[#9b87f5] mb-2">Features Mobile</h3>
           <textarea 
             className="w-full p-3 border rounded-md"
-            rows={10}
+            rows={isMobile ? 6 : 10}
             defaultValue={mobileContent.features}
           />
         </div>
@@ -142,7 +145,7 @@ export const NovelaMobileSection = ({ isOpen, onToggle }: NovelaMobileSectionPro
           <h3 className="text-lg font-semibold text-[#9b87f5] mb-2">Métricas Mobile</h3>
           <textarea 
             className="w-full p-3 border rounded-md"
-            rows={10}
+            rows={isMobile ? 6 : 10}
             defaultValue={mobileContent.metrics}
           />
         </div>

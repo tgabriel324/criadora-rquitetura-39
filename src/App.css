@@ -1,8 +1,16 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+    max-width: 100%;
+  }
 }
 
 .logo {
@@ -39,4 +47,43 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Mobile specific styles */
+@media (max-width: 768px) {
+  .mobile-scroll {
+    overflow-x: auto;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  .mobile-smaller-text {
+    font-size: 0.9rem !important;
+  }
+  
+  .mobile-smaller-heading {
+    font-size: 1.25rem !important;
+  }
+  
+  .mobile-padding {
+    padding: 0.75rem !important;
+  }
+  
+  .mobile-margin {
+    margin: 0.5rem !important;
+  }
+  
+  .mobile-hide {
+    display: none !important;
+  }
+  
+  .mobile-show {
+    display: block !important;
+  }
 }
