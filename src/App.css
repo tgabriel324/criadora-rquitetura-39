@@ -53,6 +53,13 @@
 @media (max-width: 768px) {
   .mobile-scroll {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .mobile-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
   
   .mobile-full-width {
@@ -85,5 +92,46 @@
   
   .mobile-show {
     display: block !important;
+  }
+  
+  /* Tab navigation specific mobile styles */
+  [role="tablist"] {
+    padding: 0.5rem !important;
+    gap: 0.25rem !important;
+  }
+  
+  [role="tab"] {
+    flex-shrink: 0 !important;
+    font-size: 0.85rem !important;
+    padding: 0.5rem 0.75rem !important;
+    white-space: nowrap !important;
+  }
+  
+  /* Make tab list stay visible by adding some shadow indicators */
+  [role="tablist"]::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.05));
+    pointer-events: none;
+  }
+  
+  [role="tablist"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    background: linear-gradient(to left, transparent, rgba(0,0,0,0.05));
+    pointer-events: none;
+  }
+  
+  /* Position relative for scroll indicators */
+  [role="tablist"] {
+    position: relative;
   }
 }
